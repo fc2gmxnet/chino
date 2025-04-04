@@ -2,7 +2,9 @@ import streamlit as st  # Para crear apps en HTML
 import pandas as pd     # Para trabajar con dataframes (tablas)
 import random           # Para trabajar con aleatoriedades
 
+df=pd.read_excel('https://github.com/fc2gmxnet/chino/HSK2.xlsx')
 
+"""
 df = pd.DataFrame({
     'Column1': ['爷爷常常让我给他读报纸',
  '这个消息是我从报纸上看到的',
@@ -641,8 +643,7 @@ df = pd.DataFrame({
  'Are you still angry because of that matter?',
  'You are still young to understand']
 })
-
-
+"""
 st.write('HSK 2')
 
 #st.dataframe(df.sample(3))
