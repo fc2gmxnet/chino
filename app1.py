@@ -39,7 +39,7 @@ if st.button("+++"):
     st.rerun()  # Refresh the app to display the new random row
 
 # Hide Streamlit style
-hide_st_style = """
+hide_st_style = 
             <style>
             footer {visibility: hidden;}
             header {visibility: hidden;}
