@@ -667,7 +667,7 @@ random_row = df.iloc[st.session_state.random_index]
 st.title(random_row.iloc[0])
 
 # Button to reveal values of the second and third columns
-if st.button(:red_question_mark:):
+if st.button('?'):
     #st.write(' ')
     #st.write("### Value from Column 2:")
     st.subheader(random_row.iloc[1])
