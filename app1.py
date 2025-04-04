@@ -38,10 +38,3 @@ if st.button("+++"):
     get_new_random_row()
     st.rerun()  # Refresh the app to display the new random row
 
-# Hide Streamlit style
-hide_st_style = 
-            <style>
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-st.markdown(hide_st_style, unsafe_allow_html=True)
