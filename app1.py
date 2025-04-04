@@ -1,3 +1,6 @@
+pip install openpyxl
+
+
 import streamlit as st  # Para crear apps en HTML
 import pandas as pd     # Para trabajar con dataframes (tablas)
 import random           # Para trabajar con aleatoriedades
