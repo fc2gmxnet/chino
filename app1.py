@@ -642,7 +642,10 @@ df = pd.DataFrame({
 })
 
 # Page configuration
-st.set_page_config(layout='wide')
+st.set_page_config(
+    page_title='Google',
+    page_icon='g_translate',
+    layout='wide')
 ######
 st.write('HSK 2')
 
