@@ -2,8 +2,6 @@ import streamlit as st  # Para crear apps en HTML
 import pandas as pd     # Para trabajar con dataframes (tablas)
 import random           # Para trabajar con aleatoriedades
 
-git clone 'https://github.com/fc2gmxnet/chino/'
-
 
 df = pd.read_excel("HSK2.xlsx")
 
