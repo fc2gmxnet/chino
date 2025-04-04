@@ -641,7 +641,9 @@ df = pd.DataFrame({
  'You are still young to understand']
 })
 
-
+# Page configuration
+st.set_page_config(layout='wide')
+######
 st.write('HSK 2')
 
 #st.dataframe(df.sample(3))
