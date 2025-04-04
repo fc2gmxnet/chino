@@ -643,7 +643,7 @@ df = pd.DataFrame({
 })
 
 
-st.write('HSK 2 (app1.py)')
+st.write('HSK 2')
 
 #st.dataframe(df.sample(3))
 
