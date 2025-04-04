@@ -4,7 +4,6 @@ import random           # Para trabajar con aleatoriedades
 
 df=pd.read_excel('https://github.com/fc2gmxnet/chino/HSK2.xlsx')
 
-
 st.write('HSK 2')
 
 #st.dataframe(df.sample(3))
