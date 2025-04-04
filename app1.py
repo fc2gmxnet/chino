@@ -2,7 +2,7 @@ import streamlit as st  # Para crear apps en HTML
 import pandas as pd     # Para trabajar con dataframes (tablas)
 import random           # Para trabajar con aleatoriedades
 
-df=pd.read_excel('https://github.com/fc2gmxnet/chino/blob/d35347e5ccf1e12c2a6ab2987c7b3901ecf75bf7/HSK2.xlsx')
+df=pd.read_excel('https://github.com/fc2gmxnet/chino/blob/d35347e5ccf1e12c2a6ab2987c7b3901ecf75bf7/HSK2.xlsx', engine='openpyxl')
 
 st.write('HSK 2')
 
