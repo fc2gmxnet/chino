@@ -674,4 +674,4 @@ if st.button("?"):
 # Button to select a new random row
 if st.button("+++"):
     get_new_random_row()
-    st.experimental_rerun()  # Refresh the app to display the new random row
+    st.rerun()  # Refresh the app to display the new random row
