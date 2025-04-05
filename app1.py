@@ -4,7 +4,9 @@ import random           # Para trabajar con aleatoriedades
 
 #No df = pd.read_excel(https://github.com/fc2gmxnet/chino/blob/main/HSK2.xlsx)
 #No df = pd.read_excel(https://github.com/fc2gmxnet/chino/HSK2.xlsx)
-df = pd.read_excel(./HSK2.xlsx)
+#No df = pd.read_excel(./HSK2.xlsx)
+df = pd.read_excel(https://github.com/fc2gmxnet/chino/main/HSK2.xlsx)
+
 """
 df = pd.DataFrame({
     'Column1': ['爷爷常常让我给他读报纸',
