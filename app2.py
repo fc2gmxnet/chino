@@ -20,8 +20,7 @@ import pandas as pd     # For working with dataframes (tables)
 import random           # For working with randomness
 
 # Read the Excel file into a DataFrame
-df = pd.read_excel("https://raw.githubusercontent.com/fc2gmxnet/chino/main/HSK3ESCN.xlsx", engine='openpyxl')
-
+df = pd.read_excel("https://raw.githubusercontent.com/fc2gmxnet/chino/main/HSK3ENCN.xlsx", engine='openpyxl')
 
 # Page configuration
 st.set_page_config(
