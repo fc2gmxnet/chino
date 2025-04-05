@@ -20,7 +20,7 @@ import pandas as pd     # For working with dataframes (tables)
 import random           # For working with randomness
 
 # Read the Excel file into a DataFrame
-df = pd.read_excel("https://raw.githubusercontent.com/fc2gmxnet/chino/main/HSK 3 ES CN.xlsx", engine='openpyxl')
+df = pd.read_excel("https://raw.githubusercontent.com/fc2gmxnet/chino/main/HSK3ESCN.xlsx", engine='openpyxl')
 
 
 # Page configuration
@@ -49,7 +49,7 @@ st.title(random_row.iloc[0])
 # Button to reveal values of the second and third columns
 if st.button('???'):
     st.subheader(random_row.iloc[1])
-    st.subheader(random_row.iloc[2])
+    #st.subheader(random_row.iloc[2])
 
 # Button to select a new random row
 if st.button(" +++ "):
