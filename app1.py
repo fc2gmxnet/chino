@@ -2,7 +2,7 @@ import streamlit as st  # Para crear apps en HTML
 import pandas as pd     # Para trabajar con dataframes (tablas)
 import random           # Para trabajar con aleatoriedades
 
-df=pd.read_excel('https://github.com/fc2gmxnet/chino/HSK2.xlsx') #No te olvides de los paréntesis
+df=pd.read_excel("https://github.com/fc2gmxnet/chino/HSK2.xlsx") #No te olvides de los paréntesis
 
 """
 df = pd.DataFrame({
