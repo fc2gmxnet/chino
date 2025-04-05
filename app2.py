@@ -43,11 +43,11 @@ random_row = df.iloc[st.session_state.random_index]
 st.title(random_row.iloc[0])
 
 # Button to reveal values of the second and third columns
-if st.button(' ? '):
+if st.button('  ?  '):
     st.subheader(random_row.iloc[1])
     st.subheader(random_row.iloc[2])
 
 # Button to select a new random row
-if st.button("+++"):
+if st.button(" +++ "):
     get_new_random_row()
     st.rerun()  # Refresh the app to display the new random row
