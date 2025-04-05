@@ -47,7 +47,7 @@ st.title(random_row.iloc[0])
 
 # Button to reveal values of the second and third columns
 if st.button('???'):
-    st.subheader(random_row.iloc[1])
+    st.title(random_row.iloc[1])
     #st.subheader(random_row.iloc[2])
 
 # Button to select a new random row
