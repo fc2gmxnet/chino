@@ -2,20 +2,7 @@ import streamlit as st  # Para crear apps en HTML
 import pandas as pd     # Para trabajar con dataframes (tablas)
 import random           # Para trabajar con aleatoriedades
 
-#No df = pd.read_excel(https://github.com/fc2gmxnet/chino/blob/main/HSK2.xlsx)
-#No df = pd.read_excel(https://github.com/fc2gmxnet/chino/HSK2.xlsx)
-#No df = pd.read_excel(./HSK2.xlsx)
-#No df = pd.read_excel(https://github.com/fc2gmxnet/chino/main/HSK2.xlsx)
-
-# Get the directory where app.py is located
-script_dir = os.path.dirname(os.path.abspath(__file__))
-
-# Construct the path to file.xlsx
-file_path = os.path.join(script_dir, "HSK2.xlsx")
-
-# Read the Excel file into a DataFrame
-df = pd.read_excel(file_path)
-
+df=pd.read_excel('https://github.com/fc2gmxnet/chino/HSK2.xlsx') #No te olvides de los paréntesis
 
 """
 df = pd.DataFrame({
