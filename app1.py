@@ -4,7 +4,7 @@ import random           # Para trabajar con aleatoriedades
 
 #NO: df=pd.read_excel("https://github.com/fc2gmxnet/chino/HSK2.xlsx") #No te olvides de los paréntesis
 
-df=pd.read_excel("https://raw.githubusercontent.com/fc2gmxnet/chino/main/HSK2.xlsx")
+df=pd.read_excel("https://raw.githubusercontent.com/fc2gmxnet/chino/main/HSK2.xlsx", , engine='openpyxl')
 
 """
 df = pd.DataFrame({
