@@ -1,3 +1,4 @@
+"""
 import subprocess
 import sys
 
@@ -11,6 +12,8 @@ try:
 except ImportError:
     install_package("openpyxl")
     import openpyxl
+"""
+# Puse en archivo requirements.txt openpyxl
 
 import streamlit as st  # For creating apps in HTML
 import pandas as pd     # For working with dataframes (tables)
