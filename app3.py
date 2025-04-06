@@ -7,8 +7,6 @@ import random           # For working with randomness
 # Read the Excel file into a DataFrame
 df = pd.read_excel("https://raw.githubusercontent.com/fc2gmxnet/chino/main/Duolingo.xlsx", engine='openpyxl')
 
-# Escoge columna para pregunta y para respuesta
-
 
 # Page configuration
 st.set_page_config(
