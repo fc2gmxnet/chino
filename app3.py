@@ -20,11 +20,11 @@ st.write('Duolingo')
 toggle = st.toggle("Começar em inglês")
 
 if toggle:
-    columna_pregunta = 0
-    columna_respuesta = 1
-else:
     columna_pregunta = 1
     columna_respuesta = 0
+else:
+    columna_pregunta = 0
+    columna_respuesta = 1
 
 
 # Initialize or update the session state to store the random row index
