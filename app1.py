@@ -1,5 +1,5 @@
 import streamlit as st                      # Para crear apps en HTML
-from streamlit_keyboard import keypress     # Para crear shortcuts en botones
+from streamlit-keyboard import keypress     # Para crear shortcuts en botones
 import pandas as pd                         # Para trabajar con dataframes (tablas)
 import random                               # Para trabajar con aleatoriedades
 
