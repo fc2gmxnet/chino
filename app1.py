@@ -645,7 +645,7 @@ df = pd.DataFrame({
 # Page configuration
 st.set_page_config(
     page_title='Google',
-    page_icon=':magnifying_glass_tilted_left:',
+    page_icon='https://www.google.com/favicon.ico',
     layout='wide')
 ######
 st.write('HSK 2')
