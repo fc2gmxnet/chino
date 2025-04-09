@@ -1,5 +1,5 @@
 import streamlit as st                                    # Para crear apps en HTML
-from streamlit_shortcuts import register_shortcut         # Para crear shortcuts en botones
+#from streamlit_shortcuts import register_shortcut        # No funcionó Para crear shortcuts en botones
 import pandas as pd                                       # Para trabajar con dataframes (tablas)
 import random                                             # Para trabajar con aleatoriedades
 
@@ -669,13 +669,9 @@ random_row = df.iloc[st.session_state.random_index]
 #st.title("?")
 st.title(random_row.iloc[0])
 
-####################################################
-
-
-####################################################
 
 # Button to reveal values of the second and third columns
-if st.button('???') or st.session_state.get("Show Values", False):
+if st.button('???'):
     #st.write(' ')
     #st.write("### Value from Column 2:")
     st.subheader(random_row.iloc[1])
@@ -684,7 +680,7 @@ if st.button('???') or st.session_state.get("Show Values", False):
     st.subheader(random_row.iloc[2])
 
 # Button to select a new random row
-if st.button("+++") or st.session_state.get("New Row", False):
+if st.button("+++"):
     get_new_random_row()
     st.rerun()  # Refresh the app to display the new random row
 
