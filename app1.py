@@ -1,6 +1,7 @@
-import streamlit as st  # Para crear apps en HTML
-import pandas as pd     # Para trabajar con dataframes (tablas)
-import random           # Para trabajar con aleatoriedades
+import streamlit as st                      # Para crear apps en HTML
+from streamlit_keyboard import keypress     # Para crear shortcuts en botones
+import pandas as pd                         # Para trabajar con dataframes (tablas)
+import random                               # Para trabajar con aleatoriedades
 
 df = pd.DataFrame({
     'Column1': ['爷爷常常让我给他读报纸',
@@ -647,10 +648,11 @@ st.set_page_config(
     page_title='Google',
     page_icon='https://www.google.com/favicon.ico',
     layout='wide')
+
 ######
 st.write('HSK 2')
 
-#st.dataframe(df.sample(3))
+#st.dataframe(df.sample(3)) # Optional, to show dataframe
 
 # Initialize or update the session state to store the random row index
 if "random_index" not in st.session_state:
@@ -667,8 +669,26 @@ random_row = df.iloc[st.session_state.random_index]
 #st.title("?")
 st.title(random_row.iloc[0])
 
+####################################################
+
+# Detect keypress
+key = keypress()
+
+# Spacebar shortcut for the '???' button
+if key == " " or st.button('???'):
+    st.subheader(random_row.iloc[1])  # Display value from Column 2
+    st.subheader(random_row.iloc[2])  # Display value from Column 3
+
+# Right arrow shortcut for the '+++' button
+if key == "ArrowRight" or st.button("+++"):
+    get_new_random_row()  # Generate a new random row
+    st.experimental_rerun()  # Refresh the app
+
+
+####################################################
+
 # Button to reveal values of the second and third columns
-if st.button('???'):
+if key == " " or st.button('???'):
     #st.write(' ')
     #st.write("### Value from Column 2:")
     st.subheader(random_row.iloc[1])
@@ -677,7 +697,7 @@ if st.button('???'):
     st.subheader(random_row.iloc[2])
 
 # Button to select a new random row
-if st.button("+++"):
+if key == "ArrowRight" or st.button("+++"):
     get_new_random_row()
     st.rerun()  # Refresh the app to display the new random row
 
