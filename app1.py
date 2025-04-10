@@ -671,8 +671,8 @@ st.title(random_row.iloc[0])
 
 
 # Button to reveal values of the second and third columns
-if st.button('???', key='question_button', use_container_width=True)
-#if st.button('???'):
+
+if st.button('???'):
     #st.write(' ')
     #st.write("### Value from Column 2:")
     st.subheader(random_row.iloc[1])
@@ -681,20 +681,7 @@ if st.button('???', key='question_button', use_container_width=True)
     st.subheader(random_row.iloc[2])
 
 # Button to select a new random row
-if st.button("+++", key='plus_button', on_click=get_new_random_row, use_container_width=True):
-#if st.button("+++"):
-    ####get_new_random_row()
-    st.rerun()  # Refresh the app to display the new random row
 
-# Add keyboard shortcuts using st.markdown
-st.markdown("""
-<script>
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'ArrowDown') {
-        document.getElementById('question_button').click();
-    } else if (event.key === 'ArrowRight') {
-        document.getElementById('plus_button').click();
-    }
-});
-</script>
-""", unsafe_allow_html=True)
+if st.button("+++"):
+    get_new_random_row()
+    st.rerun()  # Refresh the app to display the new random row
