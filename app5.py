@@ -16,9 +16,6 @@ st.set_page_config(
     layout='wide'
 )
 
-st.write('INCI')
-
-
 # Function to select a random row
 def get_random_row():
     return data.sample(1).iloc[0]
@@ -28,7 +25,8 @@ if 'row' not in st.session_state:
     st.session_state.row = get_random_row()
 
 # Display title (INCI)
-st.title(st.session_state.row['INCI'])
+titulo_inci = f"INCI: {st.session_state.row['INCI']}"
+st.title(titulo_inci)
 
 # Button to reveal translations and info
 if st.button('???'):
