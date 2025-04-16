@@ -11,7 +11,7 @@ data = pd.read_excel("https://raw.githubusercontent.com/fc2gmxnet/chino/main/HPC
 
 # Page configuration
 st.set_page_config(
-    page_title='Google',
+    page_title='translate - Pesquisa Google',
     page_icon=':magnifying_glass_tilted_left:',
     layout='wide'
 )
