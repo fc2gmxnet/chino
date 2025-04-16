@@ -33,11 +33,21 @@ if st.button('???'):
     translations = f"{st.session_state.row['EN']} | {st.session_state.row['BR']} | {st.session_state.row['ES']}"
     st.title(translations)
     st.header(st.session_state.row['Info'])
-    st.title(st.session_state.row['IUPAC'])
+    #st.title(st.session_state.row['IUPAC'])
     
     # Display image
-    image_url = f"https://raw.githubusercontent.com/fc2gmxnet/chino/main/imagenes/{st.session_state.row['Picture']}"
-    st.image(image_url)
+    #image_url = f"https://raw.githubusercontent.com/fc2gmxnet/chino/main/imagenes/{st.session_state.row['Picture']}"
+    #st.image(image_url)
+
+    col1, col2 = st.columns([2, 1])
+
+    with col1:
+        st.title(st.session_state.row['IUPAC'])
+
+    with col2:
+        image_url = f"https://raw.githubusercontent.com/fc2gmxnet/chino/imagened/{st.session_state.row['Picture']}"
+        st.image(image_url)
+
 
 # Button to get a new random row
 if st.button('+++'):
