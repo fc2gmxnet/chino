@@ -1,4 +1,4 @@
-er# Puse en archivo requirements.txt openpyxl
+# Puse en archivo requirements.txt openpyxl
 
 import streamlit as st  # For creating apps in HTML
 import pandas as pd     # For working with dataframes (tables)
@@ -32,7 +32,7 @@ st.title(titulo_inci)
 if st.button('???'):
     translations = f"{st.session_state.row['EN']} | {st.session_state.row['BR']} | {st.session_state.row['ES']}"
     st.title(translations)
-    st.title(st.session_state.row['Info'])
+    st.header(st.session_state.row['Info'])
     st.title(st.session_state.row['IUPAC'])
     
     # Display image
