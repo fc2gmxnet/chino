@@ -642,12 +642,12 @@ df = pd.DataFrame({
  'You are still young to understand']
 })
 
-
 # Page configuration
 st.set_page_config(
-    page_title='Google',
-    page_icon='https://www.google.com/favicon.ico',
-    layout='wide')
+    page_title='translate - Pesquisa Google',
+    page_icon='https://github.com/fc2gmxnet/chino/raw/main/icons8-google-logo-48.png',
+    layout='wide'
+)
 
 ######
 st.write('HSK 2')
