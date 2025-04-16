@@ -45,7 +45,7 @@ if st.button('???'):
         st.title(st.session_state.row['IUPAC'])
 
     with col2:
-        image_url = f"https://raw.githubusercontent.com/fc2gmxnet/chino/imagened/{st.session_state.row['Picture']}"
+        image_url = f"https://raw.githubusercontent.com/fc2gmxnet/chino/imagenes/{st.session_state.row['Picture']}"
         st.image(image_url)
 
 
