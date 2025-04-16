@@ -7,6 +7,8 @@ import random           # For working with randomness
 # Read the Excel file into a DataFrame
 data = pd.read_excel("https://raw.githubusercontent.com/fc2gmxnet/chino/main/HPC_INCI.xlsx", engine='openpyxl')
 
+# https://github.com/fc2gmxnet/chino/raw/main/imagenes/2-ethylhexylmyristate.png
+
 # Page configuration
 st.set_page_config(
     page_title='Google',
@@ -35,7 +37,7 @@ if st.button('???'):
     st.title(st.session_state.row['Info'])
     
     # Display image
-    image_url = f"https://raw.githubusercontent.com/fc2gmxnet/chino/imagenes/{st.session_state.row['Picture']}"
+    image_url = f"https://raw.githubusercontent.com/fc2gmxnet/chino/main/imagenes/{st.session_state.row['Picture']}"
     st.image(image_url)
 
 # Button to get a new random row
