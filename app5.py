@@ -12,7 +12,7 @@ data = pd.read_excel("https://raw.githubusercontent.com/fc2gmxnet/chino/main/HPC
 # Page configuration
 st.set_page_config(
     page_title='translate - Pesquisa Google',
-    page_icon=':magnifying_glass_tilted_left:',
+    page_icon='https://icons8.com.br/icons/set/google',
     layout='wide'
 )
 
