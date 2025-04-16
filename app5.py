@@ -7,6 +7,15 @@ import random           # For working with randomness
 # Read the Excel file into a DataFrame
 data = pd.read_excel("https://raw.githubusercontent.com/fc2gmxnet/chino/main/HPC_INCI.xlsx", engine='openpyxl')
 
+# Page configuration
+st.set_page_config(
+    page_title='Google',
+    page_icon=':magnifying_glass_tilted_left:',
+    layout='wide'
+)
+
+st.write('INCI')
+
 
 # Function to select a random row
 def get_random_row():
