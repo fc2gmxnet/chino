@@ -644,7 +644,7 @@ df = pd.DataFrame({
 
 # Page configuration
 st.set_page_config(
-    page_title='translate - Pesquisa Google',
+    page_title='Google             ',
     page_icon='https://github.com/fc2gmxnet/chino/raw/main/icons8-google-logo-48.png',
     layout='wide'
 )
