@@ -33,6 +33,7 @@ if st.button('???'):
     translations = f"{st.session_state.row['EN']} | {st.session_state.row['BR']} | {st.session_state.row['ES']}"
     st.title(translations)
     st.title(st.session_state.row['Info'])
+    st.title(st.session_state.row['IUPAC'])
     
     # Display image
     image_url = f"https://raw.githubusercontent.com/fc2gmxnet/chino/main/imagenes/{st.session_state.row['Picture']}"
