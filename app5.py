@@ -32,7 +32,7 @@ st.title(titulo_inci)
 if st.button('???'):
     translations = f"{st.session_state.row['EN']} | {st.session_state.row['BR']} | {st.session_state.row['ES']}"
     st.title(translations)
-    st.header(st.session_state.row['Info'])
+    st.title(st.session_state.row['Info'])
     st.title(st.session_state.row['IUPAC'])
     
     # Display image
