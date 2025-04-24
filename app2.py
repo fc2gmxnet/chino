@@ -30,6 +30,14 @@ st.set_page_config(
 )
 
 st.write('HSK 3')
+toggle = st.toggle("用中文回答")
+
+if toggle:
+    columna_pregunta = 2
+    columna_respuesta = 0
+else:
+    columna_pregunta = 0
+    columna_respuesta = 2
 
 # Initialize or update the session state to store the random row index
 if "random_index" not in st.session_state:
@@ -43,12 +51,12 @@ def get_new_random_row():
 random_row = df.iloc[st.session_state.random_index]
 
 # Display the value of the first column
-st.title(random_row.iloc[0])
+st.title(random_row.iloc[columna_pregunta])
 
 # Button to reveal values of the second and third columns
 if st.button('???'):
     st.subheader(random_row.iloc[1])
-    st.subheader(random_row.iloc[2])
+    st.subheader(random_row.iloc[columna_respuesta])
 
 # Button to select a new random row
 if st.button(" +++ "):
