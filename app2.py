@@ -24,8 +24,8 @@ df = pd.read_excel("https://raw.githubusercontent.com/fc2gmxnet/chino/main/HSK3.
 
 # Page configuration
 st.set_page_config(
-    page_title='Google',
-    page_icon=':magnifying_glass_tilted_left:',
+    page_title='translate - Pesquisa Google',
+    page_icon='https://github.com/fc2gmxnet/chino/raw/main/icons8-google-logo-48.png',
     layout='wide'
 )
 
