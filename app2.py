@@ -28,9 +28,25 @@ st.set_page_config(
     page_icon='https://github.com/fc2gmxnet/chino/raw/main/icons8-google-logo-48.png',
     layout='wide'
 )
+"""
+# Create two columns
+col1, col2 = st.columns([1, 2])  # Adjust the proportions as needed
 
-st.write('HSK 3')
-toggle = st.toggle("用中文回答")
+# Place the widgets in the columns
+with col1:
+    st.write('HSK 3')
+with col2:
+    toggle = st.toggle("用中文回答")
+
+"""
+# Create two columns
+col1, col2 = st.columns([1, 2])  # Adjust the proportions as needed
+
+# Place the widgets in the columns
+with col1:
+    st.write('HSK 3')
+with col2:
+    toggle = st.toggle("用中文回答")
 
 if toggle:
     columna_pregunta = 2
