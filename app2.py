@@ -50,11 +50,16 @@ def get_new_random_row():
 random_row = df.iloc[st.session_state.random_index]
 
 # Display the value of the first column
-st.title(random_row.iloc[columna_pregunta])
+# Pensado para mostrar con texto mayor los caracteres
+if columna_pregunta == 0:
+    st.title(random_row.iloc[columna_pregunta])
+else:
+    st.subheader(random_row.iloc[columna_pregunta])
 
 # Button to reveal values of the second and third columns
 if st.button('???'):
     st.subheader(random_row.iloc[1])
+    # Pensado para mostrar con texto mayor los caracteres
     if columna_respuesta == 0:
         st.title(random_row.iloc[columna_respuesta])
     else:
