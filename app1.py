@@ -644,13 +644,21 @@ df = pd.DataFrame({
 
 # Page configuration
 st.set_page_config(
-    page_title='Google             - Pesquisa',
+    page_title='maps - Pesquisa Google',
     page_icon='https://github.com/fc2gmxnet/chino/raw/main/icons8-google-logo-48.png',
     layout='wide'
 )
 
-######
-st.write('HSK 2')
+# Choose language to start with
+toggle = st.toggle("HSK 2:    用中文回答")
+
+if toggle:
+    columna_pregunta = 2
+    columna_respuesta = 0
+else:
+    columna_pregunta = 0
+    columna_respuesta = 2
+
 
 #st.dataframe(df.sample(3)) # Optional, to show dataframe
 
@@ -666,19 +674,24 @@ def get_new_random_row():
 random_row = df.iloc[st.session_state.random_index]
 
 # Display the value of the first column
-#st.title("?")
-st.title(random_row.iloc[0])
+# Pensado para mostrar con texto mayor los caracteres
+if columna_pregunta == 0:
+    st.title(random_row.iloc[columna_pregunta])
+else:
+    st.subheader(random_row.iloc[columna_pregunta])
+
 
 
 # Button to reveal values of the second and third columns
-
+# Button to reveal values of the second and third columns
 if st.button('???'):
-    #st.write(' ')
-    #st.write("### Value from Column 2:")
     st.subheader(random_row.iloc[1])
-    #st.write(' ')
-    #st.write("### Value from Column 3:")
-    st.subheader(random_row.iloc[2])
+    # Pensado para mostrar con texto mayor los caracteres
+    if columna_respuesta == 0:
+        st.title(random_row.iloc[columna_respuesta])
+    else:
+        st.subheader(random_row.iloc[columna_respuesta])
+
 
 # Button to select a new random row
 
