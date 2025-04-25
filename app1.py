@@ -478,7 +478,7 @@ df = pd.DataFrame({
  'Go straight ahead, the library is on your right',
  'When crossing the road, look first at the left, then look at the right',
  'The elevator on the right is broken, let us take the one on the left',
- 'You stand to the left for a while',
+ 'Move a bit to the left',
  'A new car stopped outside the door',
  'The Manager Wang is abroad now',
  'We (have to) work eight hours a day',
