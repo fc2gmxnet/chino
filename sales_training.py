@@ -53,7 +53,7 @@ with st.container(border=True):
                 border-radius: 10px; 
                 border: 1px solid #c3e6cb;
                 margin-top: 20px;">
-                <strong style="font-size: 20px;">✅ Answer:</strong><br>
+                <strong style="font-size: 20px;">✅</strong><br>
                 <span style="font-size: 24px;">{row['answer']}</span>
             </div>
             """, 
