@@ -31,7 +31,7 @@ def toggle_answer():
 row = df.iloc[st.session_state.current_index]
 
 with st.container(border=True):
-    st.write("Rule")
+    #st.write("Rule")
     st.subheader(row['rule'])
     
     #st.divider()
