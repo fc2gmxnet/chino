@@ -5,7 +5,7 @@ import os
 
 # --- FILE CONFIGURATION ---
 # The name of your Excel file
-EXCEL_FILE = 'hsk2_data.xlsx'
+EXCEL_FILE = 'HSK2.xlsx'
 
 # Function to load data or create it if it doesn't exist
 def load_data():
