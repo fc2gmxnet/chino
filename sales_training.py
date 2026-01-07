@@ -36,7 +36,7 @@ with st.container(border=True):
     
     #st.divider()
     
-    st.write("Question")
+    st.write("❓Question")
     st.subheader(row['question'])
     
     #if st.session_state.show_ans:
@@ -63,6 +63,6 @@ with st.container(border=True):
 # 6. Buttons
 col1, col2 = st.columns(2)
 with col1:
-    st.button("💡 Show Answer", on_click=toggle_answer, use_container_width=True)
+    st.button("💡 Answer", on_click=toggle_answer, use_container_width=True)
 with col2:
-    st.button("➡️ Next Question", on_click=next_question, use_container_width=True)
+    st.button("➡️ Next", on_click=next_question, use_container_width=True)
