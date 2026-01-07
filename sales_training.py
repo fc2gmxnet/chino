@@ -7,7 +7,7 @@ st.markdown("""
     <style>
     /* This targets the main body text */
     .stMain {
-        font-size: 20px;
+        font-size: 50px;
     }
     </style>
     """, unsafe_allow_html=True)
