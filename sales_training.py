@@ -31,16 +31,34 @@ def toggle_answer():
 row = df.iloc[st.session_state.current_index]
 
 with st.container(border=True):
-    st.subheader("Rule")
-    st.write(row['rule'])
+    st.write("Rule")
+    st.subheader(row['rule'])
     
     st.divider()
     
     st.write("Question")
     st.subheader(row['question'])
     
+    #if st.session_state.show_ans:
+        #st.success(f"**Answer:** {row['answer']}")
+
     if st.session_state.show_ans:
-        st.success(f"**Answer:** {row['answer']}")
+        # Custom CSS for a large green "Success" box
+        st.markdown(
+            f"""
+            <div style="
+                background-color: #d4edda; 
+                color: #155724; 
+                padding: 20px; 
+                border-radius: 10px; 
+                border: 1px solid #c3e6cb;
+                margin-top: 20px;">
+                <strong style="font-size: 20px;">✅ Answer:</strong><br>
+                <span style="font-size: 24px;">{row['answer']}</span>
+            </div>
+            """, 
+            unsafe_allow_html=True
+        )
 
 # 6. Buttons
 col1, col2 = st.columns(2)
