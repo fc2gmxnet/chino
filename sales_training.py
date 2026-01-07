@@ -54,8 +54,19 @@ with st.container(border=True):
         )
 
 # 6. Buttons
-col1, col2 = st.columns(2)
-with col1:
-    st.button("💡 Answer", on_click=toggle_answer, use_container_width=True)
-with col2:
-    st.button("➡️ Next", on_click=next_question, use_container_width=True)
+#col1, col2 = st.columns(2)
+#with col1:
+    #st.button("💡 Answer", on_click=toggle_answer, use_container_width=True)
+#with col2:
+    #st.button("➡️ Next", on_click=next_question, use_container_width=True)
+
+# This creates 3 columns: empty space, the buttons, and more empty space
+# The middle column (ratio of 2) holds the buttons
+left_spacer, center, right_spacer = st.columns([1, 2, 1])
+
+with center:
+    col1, col2 = st.columns(2)
+    with col1:
+        st.button("💡 Answer", on_click=toggle_answer, use_container_width=True)
+    with col2:
+        st.button("➡️ Next", on_click=next_question, use_container_width=True)
