@@ -1,4 +1,6 @@
-# A very lightweight app to learn fundamentals of sales
+# Learn fundamentals of sales
+# It is a sales training
+# Minimalistic layout (ideal for mobile phones)
 
 import streamlit as st
 import pandas as pd
@@ -10,12 +12,9 @@ df_dictionary = {'rule': ['You have to learn how to fail first before you can le
 df = pd.DataFrame(df_dictionary)
 
 # 2. Page Configuration 
-st.set_page_config(page_title="Sales Training App", layout="wide")
-
-#st.title("🎯 Sales Training")
+st.set_page_config(page_title="Sales Training", layout="wide")
 
 # 3. Initialize Session State
-# This replaces the "global" variables used in Tkinter
 if 'current_index' not in st.session_state:
     st.session_state.current_index = random.randint(0, len(df) - 1)
 if 'show_ans' not in st.session_state:
@@ -38,7 +37,7 @@ with st.container(border=True):
     st.markdown(f"<p style='font-size: 24px;'>❓ {row['question']}</p>", unsafe_allow_html=True)
     
 if st.session_state.show_ans:
-        # Custom CSS for a large green box with no emoji
+        # Custom CSS for a large green box
         st.markdown(
             f"""
             <div style="
