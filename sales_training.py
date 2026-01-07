@@ -10,7 +10,7 @@ df = pd.DataFrame(df_dictionary)
 # 2. Page Configuration 
 st.set_page_config(page_title="Sales Training App", layout="centered")
 
-st.title("🎯 Sales Training")
+#st.title("🎯 Sales Training")
 
 # 3. Initialize Session State
 # This replaces the "global" variables used in Tkinter
@@ -34,7 +34,7 @@ with st.container(border=True):
     st.write("Rule")
     st.subheader(row['rule'])
     
-    st.divider()
+    #st.divider()
     
     st.write("Question")
     st.subheader(row['question'])
