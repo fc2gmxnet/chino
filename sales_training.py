@@ -1,3 +1,5 @@
+# A very lightweight app to learn fundamentals of sales
+
 import streamlit as st
 import pandas as pd
 import random
@@ -8,7 +10,7 @@ df_dictionary = {'rule': ['You have to learn how to fail first before you can le
 df = pd.DataFrame(df_dictionary)
 
 # 2. Page Configuration 
-st.set_page_config(page_title="Sales Training App", layout="centered")
+st.set_page_config(page_title="Sales Training App", layout="wide")
 
 #st.title("🎯 Sales Training")
 
