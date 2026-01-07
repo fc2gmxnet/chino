@@ -36,8 +36,9 @@ with st.container(border=True):
     
     #st.divider()
     
-    st.write("❓Question")
-    st.subheader(row['question'])
+    #st.write("❓Question")
+    #st.subheader(row['question'])
+    st.markdown(f"<p style='font-size: 22px;'>❓ <b>Question:</b> {row['question']}</p>", unsafe_allow_html=True)
     
     #if st.session_state.show_ans:
         #st.success(f"**Answer:** {row['answer']}")
