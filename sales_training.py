@@ -37,8 +37,8 @@ with st.container(border=True):
     
     st.markdown(f"<p style='font-size: 24px;'>❓ {row['question']}</p>", unsafe_allow_html=True)
     
-    if st.session_state.show_ans:
-        # Custom CSS for a large green "Success" box
+if st.session_state.show_ans:
+        # Custom CSS for a large green box with no emoji
         st.markdown(
             f"""
             <div style="
@@ -48,8 +48,7 @@ with st.container(border=True):
                 border-radius: 10px; 
                 border: 1px solid #c3e6cb;
                 margin-top: 20px;">
-                
-                <span style="font-size: 24px;">{row['answer']}</span>
+                <span style="font-size: 24px; font-weight: 500;">{row['answer']}</span>
             </div>
             """, 
             unsafe_allow_html=True
