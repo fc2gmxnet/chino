@@ -31,19 +31,10 @@ def toggle_answer():
 row = df.iloc[st.session_state.current_index]
 
 with st.container(border=True):
-    #st.write("Rule")
     st.subheader(row['rule'])
     
-    #st.divider()
+    st.markdown(f"<p style='font-size: 24px;'>❓ {row['question']}</p>", unsafe_allow_html=True)
     
-    #st.write("❓Question")
-    #st.subheader(row['question'])
-    #st.markdown(f"<p style='font-size: 22px;'>❓ <b>Question:</b> {row['question']}</p>", unsafe_allow_html=True)
-    st.markdown(f"<p style='font-size: 22px;'>❓ {row['question']}</p>", unsafe_allow_html=True)
-    
-    #if st.session_state.show_ans:
-        #st.success(f"**Answer:** {row['answer']}")
-
     if st.session_state.show_ans:
         # Custom CSS for a large green "Success" box
         st.markdown(
