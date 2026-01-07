@@ -13,6 +13,11 @@ df = pd.DataFrame(df_dictionary)
 
 # 2. Page Configuration 
 st.set_page_config(page_title="Sales Training", layout="wide")
+st.set_page_config(
+    page_title='maps - Pesquisa Google',
+    page_icon='https://github.com/fc2gmxnet/chino/raw/main/icons8-google-logo-48.png',
+    layout='wide'
+)
 
 # 3. Initialize Session State
 if 'current_index' not in st.session_state:
