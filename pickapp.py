@@ -5,7 +5,7 @@ st.set_page_config(page_title="Quick Links", page_icon="🔗", layout="centered"
 
 # --- App title and description ---
 #st.title("🔗 Quick Links")
-st.write("Choose an option below to open the corresponding web page in a new tab.")
+#st.write("Choose an option below to open the corresponding web page in a new tab.")
 
 # --- Define options and URLs ---
 # This is the place to add, edit or delete links
@@ -40,10 +40,10 @@ if st.button("Open selected link"):
         unsafe_allow_html=True,
     )
 
-st.divider()
+#st.divider()
 
 # --- Quick access buttons ---
-st.subheader("Quick access")
+st.write("Quick access")
 cols = st.columns(3)
 items = list(LINKS.items())
 
