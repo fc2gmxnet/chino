@@ -11,7 +11,7 @@ st.write("Choose an option below to open the corresponding web page in a new tab
 LINKS = {
     "HSK 2": "https://hsk2url.streamlit.app/",
     "HSK 3": "https://hsk3url.streamlit.app/",
-    "Sales Training: "https://sales-training.streamlit.app/",
+    "Sales Training": "https://sales-training.streamlit.app/",
     "Job Interview Training": "https://job-interview-psychology.streamlit.app/",
     "INCI": "https://inci2learn.streamlit.app/",
     "HPC-INCI": "https://hpc-inci.streamlit.app/"
