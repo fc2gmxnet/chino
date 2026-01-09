@@ -13,7 +13,7 @@ df_dictionary = {'rule': ['Psychology in job interviews', 'Psychology in job int
 df = pd.DataFrame(df_dictionary)
 
 # 2. Page Configuration 
-st.set_page_config(page_title="Sales Training", layout="wide")
+st.set_page_config(page_title="Job Interview Training", layout="wide")
 st.set_page_config(
     page_title='maps - Pesquisa Google',
     page_icon='https://github.com/fc2gmxnet/chino/raw/main/icons8-google-logo-48.png',
