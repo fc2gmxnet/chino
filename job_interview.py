@@ -1,5 +1,6 @@
-# Learn fundamentals of sales
-# It is a sales training
+# Learn fundamentals of job interview psychology
+# My admiration to the teachings from:
+# https://youtu.be/m4U4iDuZaDk?si=wfMF7KEkQ_4uXD6Y
 # Minimalistic layout (ideal for mobile phones)
 
 import streamlit as st
