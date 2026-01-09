@@ -9,8 +9,8 @@ import random
 
 # Data initialization
 df_dictionary = {'rule': ['Psychology in job interviews', 'Psychology in job interviews', 
-                          '1: Cognitive Ease (being the "easy" choice', '1: Cognitive Ease (being the "easy" choice', 
-                          '1: Cognitive Ease (being the "easy" choice', 
+                          '1: Cognitive Ease (being the "easy" choice)', '1: Cognitive Ease (being the "easy" choice)', 
+                          '1: Cognitive Ease (being the "easy" choice)', 
                           '2: Halo Effect (a first impression that creates an overall positive bias)', 
                           '2: Halo Effect (a first impression that creates an overall positive bias)', 
                           '2: Halo Effect (a first impression that creates an overall positive bias)', 
@@ -36,7 +36,7 @@ df_dictionary = {'rule': ['Psychology in job interviews', 'Psychology in job int
                               "What is a common mistake that kills a candidate's likability?", 
                               'Does being likable mean I have to be "overly friendly"?', 
                               'What is Authority Bias?', 'How do I demonstrate authority during an interview answer?', 
-                              'What is the "EBC Method" for building authority?', 
+                              'What is the "EVC Method" for building authority?', 
                               'How does Confirmation Bias work during an interview?', 
                               'Why do some interviews feel like a struggle to "get through"?', 
                               'How can I ensure I use this principle to my advantage?', 
