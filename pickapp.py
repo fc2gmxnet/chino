@@ -4,10 +4,11 @@ import streamlit as st
 st.set_page_config(page_title="Quick Links", page_icon="🔗", layout="centered")
 
 # --- App title and description ---
-st.title("🔗 Quick Links")
+#st.title("🔗 Quick Links")
 st.write("Choose an option below to open the corresponding web page in a new tab.")
 
 # --- Define options and URLs ---
+# This is the place to add, edit or delete links
 LINKS = {
     "HSK 2": "https://hsk2url.streamlit.app/",
     "HSK 3": "https://hsk3url.streamlit.app/",
@@ -18,7 +19,7 @@ LINKS = {
 }
 
 # --- Dropdown selection ---
-selected = st.selectbox("Select a destination:", list(LINKS.keys()))
+selected = st.selectbox("Choose to open the web page in a new tab:", list(LINKS.keys()))
 
 # --- Open selected link in a new tab ---
 # Streamlit's native link_button opens in the same tab; to open in a new tab,
@@ -59,4 +60,4 @@ for i, (label, url) in enumerate(items):
         )
 
 # --- Footer ---
-st.caption("Tip: You can customize the options and URLs in the LINKS dictionary.")
+#st.caption("Tip: You can customize the options and URLs in the LINKS dictionary.")
