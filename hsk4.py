@@ -7,6 +7,14 @@ df_dictionary = {'Lesson': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 df = pd.DataFrame(df_dictionary)
 df['Lesson'] = df['Lesson'].astype(str)  # Ensure lessons are strings
 
+import streamlit as st
+import pandas as pd
+import random
+
+# --- Data setup ---
+df = pd.DataFrame(df_dictionary)
+df['Lesson'] = df['Lesson'].astype(str)  # Ensure lessons are strings
+
 # --- Page configuration ---
 st.set_page_config(
     page_title='maps - Pesquisa Google',
@@ -14,12 +22,9 @@ st.set_page_config(
     layout='wide'
 )
 
-# --- UI: Toggle and Dropdown side by side ---
-col1, col2 = st.columns([2, 1])
-with col1:
-    toggle = st.toggle("HSK 4:    用中文回答")
-with col2:
-    selected_lesson = st.selectbox("Lesson", sorted(df['Lesson'].unique()))
+# --- UI: Dropdown on top, Toggle below ---
+selected_lesson = st.selectbox("Select Lesson", sorted(df['Lesson'].unique()))
+toggle = st.toggle("HSK 4:    用中文回答")
 
 # --- Language columns ---
 if toggle:
