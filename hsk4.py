@@ -49,7 +49,7 @@ else:
 # Button to reveal values of the second and third columns
 # Button to reveal values of the second and third columns
 if st.button('???'):
-    st.subheader(random_row.iloc[1])
+    st.subheader(random_row.iloc[2])
     # Pensado para mostrar con texto mayor los caracteres
     if columna_respuesta == 1:
         st.title(random_row.iloc[columna_respuesta])
