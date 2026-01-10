@@ -7,6 +7,7 @@ st.set_page_config(page_title="Quick Links", page_icon="🔗", layout="centered"
 LINKS = {
     "HSK 2": "https://hsk2url.streamlit.app/",
     "HSK 3": "https://hsk3url.streamlit.app/",
+    "HSK 4": "https://hsk4url.streamlit.app/",
     "Sales": "https://sales-training.streamlit.app/",  # Sales Training
     "Job Interview": "https://job-interview-psychology.streamlit.app/",  # Job Interview Training
     "INCI": "https://inci2learn.streamlit.app/",
