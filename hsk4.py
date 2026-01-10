@@ -51,7 +51,7 @@ else:
 if st.button('???'):
     st.subheader(random_row.iloc[1])
     # Pensado para mostrar con texto mayor los caracteres
-    if columna_respuesta == 0:
+    if columna_respuesta == 1:
         st.title(random_row.iloc[columna_respuesta])
     else:
         st.subheader(random_row.iloc[columna_respuesta])
