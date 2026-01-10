@@ -23,7 +23,7 @@ st.set_page_config(
 )
 
 # --- UI: Dropdown on top, Toggle below ---
-selected_lesson = st.selectbox("Select Lesson", sorted(df['Lesson'].unique()))
+selected_lesson = st.selectbox("选择课文", sorted(df['Lesson'].unique()))
 toggle = st.toggle("HSK 4:    用中文回答")
 
 # --- Language columns ---
