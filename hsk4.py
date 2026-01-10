@@ -18,9 +18,9 @@ toggle = st.toggle("HSK 4:    用中文回答")
 
 if toggle:
     columna_pregunta = 2
-    columna_respuesta = 0
+    columna_respuesta = 1
 else:
-    columna_pregunta = 0
+    columna_pregunta = 1
     columna_respuesta = 2
 
 
