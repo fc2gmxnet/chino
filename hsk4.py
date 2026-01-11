@@ -7,14 +7,6 @@ df_dictionary = {'Lesson': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 df = pd.DataFrame(df_dictionary)
 df['Lesson'] = df['Lesson'].astype(str)  # Ensure lessons are strings
 
-import streamlit as st
-import pandas as pd
-import random
-
-# --- Data setup ---
-df = pd.DataFrame(df_dictionary)
-df['Lesson'] = df['Lesson'].astype(str)  # Ensure lessons are strings
-
 # --- Page configuration ---
 st.set_page_config(
     page_title='maps - Pesquisa Google',
