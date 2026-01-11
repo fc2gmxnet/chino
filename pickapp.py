@@ -41,8 +41,15 @@ cols = st.columns(3)
 # Sort items by label (dictionary key)
 items = sorted(LINKS.items(), key=lambda x: x[0])
 
+# Sort items by label (dictionary key)
+items = sorted(LINKS.items(), key=lambda x: x[0])
+
+# Create one row with as many columns as items
+cols = st.columns(len(items))
+
+# Place each item in its own column
 for i, (label, url) in enumerate(items):
-    with cols[i % 3]:
+    with cols[i]:
         st.markdown(
             f"""
             <a href="{url}" target="_blank">
@@ -51,3 +58,4 @@ for i, (label, url) in enumerate(items):
             """,
             unsafe_allow_html=True,
         )
+
