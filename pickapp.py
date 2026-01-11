@@ -35,11 +35,6 @@ if st.button("Open selected link"):
     )
 
 # --- Quick access buttons (sorted alphabetically) ---
-st.write("Quick access")
-cols = st.columns(3)
-
-# Sort items by label (dictionary key)
-items = sorted(LINKS.items(), key=lambda x: x[0])
 
 # Sort items by label (dictionary key)
 items = sorted(LINKS.items(), key=lambda x: x[0])
