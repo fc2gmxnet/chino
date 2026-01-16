@@ -11,7 +11,8 @@ LINKS = {
     "Sales": "https://sales-training.streamlit.app/",  # Sales Training
     "Job Interview": "https://job-interview-psychology.streamlit.app/",  # Job Interview Training
     "INCI": "https://inci2learn.streamlit.app/",
-    "HPC-INCI": "https://hpc-inci.streamlit.app/"
+    "HPC-INCI": "https://hpc-inci.streamlit.app/",
+    "Taking Charge": "https://taking-charge.streamlit.app/"
 }
 
 # --- Dropdown selection (sorted alphabetically) ---
