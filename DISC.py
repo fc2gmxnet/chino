@@ -1,5 +1,4 @@
-# Learn fundamentals of sales
-# It is a sales training
+# Learn DISC to improve communication and relationship with other people
 # Minimalistic layout (ideal for mobile phones)
 
 import streamlit as st
@@ -12,7 +11,7 @@ df_dictionary = {'rule': ['Dominance (D): Eagle', 'Dominance (D): Eagle', 'Domin
 df = pd.DataFrame(df_dictionary)
 
 # 2. Page Configuration 
-st.set_page_config(page_title="Sales Training", layout="wide")
+st.set_page_config(page_title="DISC Training", layout="wide")
 st.set_page_config(
     page_title='maps - Pesquisa Google',
     page_icon='https://github.com/fc2gmxnet/chino/raw/main/icons8-google-logo-48.png',
@@ -21,7 +20,7 @@ st.set_page_config(
 
 # 2.5 Rule Selector at the Top
 selected_rule = st.selectbox(
-    "📌 Select a Rule",
+    "📌 Select a Personality Style (DISC)",
     options=df['rule'].unique()
 )
 
