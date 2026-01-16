@@ -12,7 +12,8 @@ LINKS = {
     "Job Interview": "https://job-interview-psychology.streamlit.app/",  # Job Interview Training
     "INCI": "https://inci2learn.streamlit.app/",
     "HPC-INCI": "https://hpc-inci.streamlit.app/",
-    "Taking Charge": "https://taking-charge.streamlit.app/"
+    "Taking Charge": "https://taking-charge.streamlit.app/",
+    "DISC": "https://disc-tutorial.streamlit.app/"
 }
 
 # --- Dropdown selection (sorted alphabetically) ---
