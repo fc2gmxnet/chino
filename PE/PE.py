@@ -25,6 +25,7 @@ LINKS = {
     'PE_Pipes_Pressurized': 'PE_Pipes_Pressurized_Grades_Explanation.pdf',
     'PE_Rotomolding': 'PE_Rotomolding_Grades_Explanation.pdf',
     'PE_grades': 'PE_Grades_Comparison.pdf',
+    'PE_vs_PP': 'PE_vs_PP.pdf',
 }
 
 st.title("📑 Technical PDF Portal: PE")
