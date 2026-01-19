@@ -2,10 +2,14 @@
 
 import streamlit as st
 import os
+from pathlib import Path
 
-st.set_page_config(page_title="PDF Quick Links", page_icon="📑", layout="centered")
+st.set_page_config(page_title="PDF Portal", page_icon="📑", layout="wide")
 
-# --- Dictionary of Links ---
+# Get the directory where PP.py is located
+# This ensures the app looks in the same folder as the script
+BASE_DIR = Path(__file__).parent
+
 LINKS = {
     'PP_Blow_Molding': 'PP_Blow_Molding_Grades_Explanation.pdf',
     'PP_Blown_Film_Extrusion_Coating': 'PP_Blown_Film_Extrusion_Coating_Grades_Explanation.pdf',
@@ -22,30 +26,32 @@ LINKS = {
     'PP_Thermoforming': 'PP_Thermoforming_Grades_Explanation.pdf'
 }
 
-st.title("📑 PDF Portal: PP")
-st.write("Access your technical grade explanations below.")
+st.title("📑 Technical PDF Portal: PP")
+st.info("If a file shows as 'Missing', ensure the PDF is uploaded to the same folder as your Python script on GitHub.")
 
-# --- Grid Configuration ---
+# --- Layout Logic ---
 items = sorted(LINKS.items())
-cols_per_row = 3  # Adjust this number to change grid width
+cols_per_row = 3 
 
-# Iterate through the items in chunks of 'cols_per_row'
 for i in range(0, len(items), cols_per_row):
     row_items = items[i : i + cols_per_row]
     cols = st.columns(cols_per_row)
     
-    for j, (label, file_path) in enumerate(row_items):
+    for j, (label, filename) in enumerate(row_items):
         with cols[j]:
-            # Use os.path.join if your files are in a subfolder, 
-            # e.g., os.path.join("PP", file_path)
-            if os.path.exists(file_path):
+            # Construct the full path to the file
+            file_path = BASE_DIR / filename
+            
+            if file_path.exists():
                 with open(file_path, "rb") as file:
                     st.download_button(
-                        label=f"📕 {label.replace('_', ' ')}",
+                        label=f"💾 {label.replace('_', ' ')}",
                         data=file,
-                        file_name=file_path,
+                        file_name=filename,
                         mime="application/pdf",
-                        use_container_width=True  # Makes buttons look uniform
+                        use_container_width=True
                     )
             else:
+                # Debugging: Show the path the app is looking at
                 st.error(f"Missing: {label}")
+                st.caption(f"Search path: `{file_path.name}`")
