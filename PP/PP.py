@@ -27,7 +27,7 @@ LINKS = {
 }
 
 st.title("📑 Technical PDF Portal: PP")
-st.info("If a file shows as 'Missing', ensure the PDF is uploaded to the same folder as your Python script on GitHub.")
+#st.info("If a file shows as 'Missing', ensure the PDF is uploaded to the same folder as your Python script on GitHub.")
 
 # --- Layout Logic ---
 items = sorted(LINKS.items())
