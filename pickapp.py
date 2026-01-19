@@ -17,6 +17,7 @@ LINKS = {
     "Boss mgmt": "https://boss-management.streamlit.app/", # How to manage the relationship with your boss
     "Boss meeting": "https://boss-meeting.streamlit.app/", # How to prepare a one-to-one meeting with your boss
     "PP": "https://pp-training.streamlit.app/",  # PP training on main applications
+    "PE": "https://pe-training.streamlit.app/",  # PE training on main applications
 }
 
 # --- Dropdown selection (sorted alphabetically) ---
