@@ -12,11 +12,11 @@ LINKS = {
     "Job Interview": "https://job-interview-psychology.streamlit.app/",  # Job Interview Training
     "INCI": "https://inci2learn.streamlit.app/",
     "HPC-INCI": "https://hpc-inci.streamlit.app/",
-    "Taking Charge": "https://taking-charge.streamlit.app/",
+    "Taking Charge": "https://taking-charge.streamlit.app/",  # How to understand and prepare for a new managerial role
     "DISC": "https://disc-tutorial.streamlit.app/",
-    "Boss mgmt": "https://boss-management.streamlit.app/",
-    "Boss meeting": "https://boss-meeting.streamlit.app/",
-    "PP": "https://pp-training.streamlit.app/",
+    "Boss mgmt": "https://boss-management.streamlit.app/", # How to manage the relationship with your boss
+    "Boss meeting": "https://boss-meeting.streamlit.app/", # How to prepare a one-to-one meeting with your boss
+    "PP": "https://pp-training.streamlit.app/",  # PP training on main applications
 }
 
 # --- Dropdown selection (sorted alphabetically) ---
