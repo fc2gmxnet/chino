@@ -23,7 +23,8 @@ LINKS = {
     'PP_Raffia_Extrusion': 'PP_Raffia_Extrusion_Grades_Explanation.pdf',
     'PP_Selection_Guide': 'PP_Selection_Guide.pdf',
     'PP_Steel_Pipe_Coating': 'PP_Steel_Pipe_Coating_SPC_Grades_Explanation.pdf',
-    'PP_Thermoforming': 'PP_Thermoforming_Grades_Explanation.pdf'
+    'PP_Thermoforming': 'PP_Thermoforming_Grades_Explanation.pdf',
+    'PP_vs_PE': 'PE_vs_PP.pdf',
 }
 
 st.title("📑 Technical PDF Portal: PP")
