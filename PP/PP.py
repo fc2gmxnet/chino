@@ -45,7 +45,7 @@ for i in range(0, len(items), cols_per_row):
             if file_path.exists():
                 with open(file_path, "rb") as file:
                     st.download_button(
-                        label=f"💾 {label.replace('_', ' ')}",
+                        label=f"✅ {label.replace('_', ' ')}",
                         data=file,
                         file_name=filename,
                         mime="application/pdf",
