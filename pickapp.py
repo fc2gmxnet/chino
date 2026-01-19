@@ -16,6 +16,7 @@ LINKS = {
     "DISC": "https://disc-tutorial.streamlit.app/",
     "Boss mgmt": "https://boss-management.streamlit.app/",
     "Boss meeting": "https://boss-meeting.streamlit.app/",
+    "PP": "https://pp-training.streamlit.app/",
 }
 
 # --- Dropdown selection (sorted alphabetically) ---
