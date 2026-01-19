@@ -13,7 +13,9 @@ LINKS = {
     "INCI": "https://inci2learn.streamlit.app/",
     "HPC-INCI": "https://hpc-inci.streamlit.app/",
     "Taking Charge": "https://taking-charge.streamlit.app/",
-    "DISC": "https://disc-tutorial.streamlit.app/"
+    "DISC": "https://disc-tutorial.streamlit.app/",
+    "Boss mgmt": "https://boss-management.streamlit.app/",
+    "Boss meeting": "https://boss-meeting.streamlit.app/",
 }
 
 # --- Dropdown selection (sorted alphabetically) ---
