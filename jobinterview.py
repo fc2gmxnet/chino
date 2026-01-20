@@ -84,7 +84,7 @@ df_dictionary = {'rule': ['Psychology in job interviews',
   'Start with a high-level summary of your expertise, then tell a cohesive story of your trajectory',
   'Start with a high-level summary of your expertise (why?), then tell a cohesive story of your trajectory (value add); soft skills: executive presence, communication clarity, energy & enthusiasm (how?), quantificable impact (results?)',
   'executive presence (eye contact, keep composed), communication clarity (90 s, clear, jargon free), energy & enthusiasm (genuine engagement)',
-  'technical knowledge (know your stuff), people management, technology (eager to use new tools)',
+  'technical knowledge (know your stuff), people management, technology (eager to use new tools) (to develop processes and solve problems)',
   'Becoming the "easy" choice, halo effect of first -or former- impression, likability/affinity, perceived over actual expertise, winning in the first 90 seconds -confirmation bias-']}
 
 df = pd.DataFrame(df_dictionary)
