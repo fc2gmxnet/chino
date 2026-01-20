@@ -148,3 +148,9 @@ with center:
         st.button("💡 Answer", on_click=toggle_answer, use_container_width=True)
     with col2:
         st.button("➡️ Next", on_click=next_question, use_container_width=True)
+
+# 7. Image below buttons
+with center:
+    st.image("https://github.com/fc2gmxnet/chino/blob/main/jobinterview.jpg", 
+             caption="Interview", 
+             use_column_width=True)
