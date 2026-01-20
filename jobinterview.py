@@ -151,6 +151,7 @@ with center:
 
 # 7. Image below buttons
 with center:
-    st.image("https://github.com/fc2gmxnet/chino/blob/main/jobinterview.jpg", 
+    # https://github.com/fc2gmxnet/chino/blob/main/jobinterview.jpg
+    st.image("jobinterview.jpg", 
              caption="Interview", 
              use_column_width=True)
