@@ -18,6 +18,7 @@ LINKS = {
     "Boss meeting": "https://boss-meeting.streamlit.app/", # How to prepare a one-to-one meeting with your boss
     "PP": "https://pp-training.streamlit.app/",  # PP training on main applications
     "PE": "https://pe-training.streamlit.app/",  # PE training on main applications
+    "Bus": "https://olhovivo.sptrans.com.br/",  # Bus in Sao Paulo
 }
 
 # --- Dropdown selection (sorted alphabetically) ---
