@@ -6,9 +6,9 @@ st.title("🎶 MP3 Player")
 
 # Dictionary of MP3 files stored in your GitHub repo
 mp3_files = {
-    "Get the truth": "https://raw.githubusercontent.com/<username>/<repo>/main/music/song1.mp3",
-    "Taking charge": "https://raw.githubusercontent.com/<username>/<repo>/main/music/song2.mp3",
-    "Sales management": "https://raw.githubusercontent.com/<username>/<repo>/main/music/song3.mp3",
+    "Get the truth": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/get_the_truth.mp3",
+    "Taking charge": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/taking_charge.mp3",
+    "Sales management": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/sales_management.mp3",
     "Boss management": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/Boss-Management-UK.mp3",
     # Add more as needed
 }
