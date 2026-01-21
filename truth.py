@@ -22,6 +22,7 @@ st.set_page_config(
 selected_rule = st.selectbox(
   "📌 Select a phase for a elicitation meeting",
   options=df['rule'].unique()
+)  
 
 # 3. Initialize Session State
 if 'current_index' not in st.session_state:
@@ -46,8 +47,8 @@ def toggle_answer():
 row = df.iloc[st.session_state.current_index]
 
 with st.container(border=True):
-    st.subheader(f"Keywords: {row['keywords'}")
-    st.subheader(f"Focus: {row['focus'}")
+    st.subheader(f"Keywords: {row['keywords']}")
+    st.subheader(f"Focus: {row['focus']}")
     
     st.markdown(f"<p style='font-size: 24px;'>❓ {row['question']}</p>", unsafe_allow_html=True)
     
