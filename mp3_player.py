@@ -1,4 +1,5 @@
 # MP3 Player
+# Minimalistic design
 
 import streamlit as st
 
@@ -18,4 +19,4 @@ choice = st.selectbox("▶️ Choose a track:", sorted(mp3_files.keys())) # In a
 
 # Play the selected MP3
 st.audio(mp3_files[choice], format="audio/mp3")
-st.success(f"Playing: {choice}")
+#st.success(f"Playing: {choice}")
