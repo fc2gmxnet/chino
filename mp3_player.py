@@ -2,7 +2,7 @@
 
 import streamlit as st
 
-st.title("▶️ MP3 Player")
+#st.title("▶️ MP3 Player")
 
 # Dictionary of MP3 files stored in your GitHub repo
 mp3_files = {
@@ -14,8 +14,8 @@ mp3_files = {
 }
 
 # Dropdown menu to select a song
-choice = st.selectbox("Choose a track:", sorted(mp3_files.keys())) # In alphabetical order
+choice = st.selectbox("▶️ Choose a track:", sorted(mp3_files.keys())) # In alphabetical order
 
 # Play the selected MP3
 st.audio(mp3_files[choice], format="audio/mp3")
-st.success(f"Now playing: {choice}")
+st.success(f"Playing: {choice}")
