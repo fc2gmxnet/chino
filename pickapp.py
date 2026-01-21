@@ -19,7 +19,7 @@ LINKS = {
     "PP": "https://pp-training.streamlit.app/",  # PP training on main applications
     "PE": "https://pe-training.streamlit.app/",  # PE training on main applications
     "Bus": "https://olhovivo.sptrans.com.br/",  # Bus in Sao Paulo
-    "Truth": "https://get-the-truth.streamlit.app/"  # Elicitation training
+    "Truth": "https://get-the-truth.streamlit.app/",  # Elicitation training
 }
 
 # --- Dropdown selection (sorted alphabetically) ---
