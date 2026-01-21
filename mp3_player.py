@@ -2,7 +2,7 @@
 
 import streamlit as st
 
-st.title("🎶 MP3 Player")
+st.title("▶️ MP3 Player")
 
 # Dictionary of MP3 files stored in your GitHub repo
 mp3_files = {
