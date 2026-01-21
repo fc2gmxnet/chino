@@ -3,3 +3,5 @@ pandas
 openpyxl
 streamlit_shortcuts
 python-docx
+pydub
+ffmpeg-python
