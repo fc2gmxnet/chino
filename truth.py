@@ -47,7 +47,7 @@ def toggle_answer():
 row = df.iloc[st.session_state.current_index]
 
 with st.container(border=True):
-    st.subheader(f"Keywords: {row['keywords']}")
+    st.subheader(f"🪄 Keywords: {row['keywords']}")
     #st.subheader(f"Focus: {row['focus']}")
     st.markdown(f"<p style='font-size: 24px;'>🎯 Focus: {row['focus']}</p>", unsafe_allow_html=True)
     
