@@ -3,6 +3,14 @@
 
 import streamlit as st
 
+# 2. Page Configuration 
+st.set_page_config(page_title="One-to-one meeting with your boss", layout="wide")
+st.set_page_config(
+    page_title='maps - Pesquisa Google',
+    page_icon='https://github.com/fc2gmxnet/chino/raw/main/icons8-google-logo-48.png',
+    layout='wide'
+)
+
 #st.title("▶️ MP3 Player")
 
 # Dictionary of MP3 files stored in your GitHub repo
