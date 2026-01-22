@@ -11,7 +11,7 @@ mp3_files = {
     "Taking charge": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/taking_charge.mp3",
     "Sales management": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/sales_management.mp3",
     "Boss management": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/Boss-Management-UK.mp3",
-    "Six Sigma Pricing": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/Six Sigma Pricing.mp3",
+    "Six Sigma Pricing": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/Six_Sigma_Pricing.mp3",
     # Add more as needed
 }
 
