@@ -16,6 +16,7 @@ mp3_files = {
     "Music Jazz Nature 1": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/Music_Space_Jazz_Nature_1.mp3",
     "Music Jazz Nature 2": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/Music_Space_Jazz_Nature_2.mp3",
     "Music Jazz Nature 3": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/Music_Space_Jazz_Nature_3.mp3",
+    "Music Jazz Dreamy": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/Music_Space_Jazz_Dreamy.mp3",
     # Add more as needed
 }
 
