@@ -25,6 +25,10 @@ mp3_files = {
     "Music Jazz Nature 2": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/Music_Space_Jazz_Nature_2.mp3",
     "Music Jazz Nature 3": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/Music_Space_Jazz_Nature_3.mp3",
     "Music Jazz Dreamy": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/Music_Space_Jazz_Dreamy.mp3",
+    "DISC D Eagle": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/DISC_D_Eagle.mp3",
+    "DISC I Parrot": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/DISC_I_Parrot.mp3",
+    "DISC S Dove": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/DISC_S_Dove.mp3",
+    "DISC C Owl": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/DISC_C_Owl.mp3",
     # Add more as needed
 }
 
