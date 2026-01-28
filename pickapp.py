@@ -22,6 +22,7 @@ LINKS = {
     "Truth": "https://get-the-truth.streamlit.app/",  # Elicitation training
     "MP3": "https://mp3-player.streamlit.app/", # MP3 Player
     "Champion": "https://champion-mind.streamlit.app/", # Develop a Champion's mind
+    "Mind": "https://champion-mind.streamlit.app/", # Develop a Champion's mind
 }
 
 # --- Dropdown selection (sorted alphabetically) ---
