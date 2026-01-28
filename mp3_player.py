@@ -29,7 +29,7 @@ mp3_files = {
     "DISC I Parrot": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/DISC_I_Parrot.mp3",
     "DISC S Dove": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/DISC_S_Dove.mp3",
     "DISC C Owl": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/DISC_C_Owl.mp3",
-    "Champion's Mind": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/Champion_mind.mp3",
+    "Champion Mind": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/Champion_mind.mp3",
     # Add more as needed
 }
 
