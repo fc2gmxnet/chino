@@ -18,15 +18,24 @@ st.set_page_config(
 
 # --- UI: Dropdown on top, Toggle below ---
 selected_lesson = st.selectbox("Select Chapter", sorted(df['Lesson'].unique()))
-toggle = st.toggle("HSK 4:    用中文回答")
+#toggle = st.toggle("HSK 4:    用中文回答")
 
-# --- Language columns ---
+"""
+# --- question answer columns ---
 if toggle:
     columna_pregunta = 2
     columna_respuesta = 1
 else:
     columna_pregunta = 1
     columna_respuesta = 2
+# END --- UI: Dropdown on top, Toggle below ---
+"""
+
+# --- Without using UI: Dropdown
+columna_pregunta = 1
+columna_respuesta = 2
+# END--- Without using UI: Dropdown
+
 
 # --- Filter by selected lesson ---
 filtered_df = df[df['Lesson'] == selected_lesson]
