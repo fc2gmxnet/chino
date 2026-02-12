@@ -48,7 +48,6 @@ if st.session_state.random_index is not None:
 
     # Reveal answer
     if st.button('???'):
-        st.subheader(random_row.iloc[3])
         if columna_respuesta == 1:
             st.title(random_row.iloc[columna_respuesta])
         else:
