@@ -18,7 +18,7 @@ st.set_page_config(
 
 # --- UI: Dropdown on top, Toggle below ---
 selected_lesson = st.selectbox("Select Chapter", sorted(df['Lesson'].unique()))
-#toggle = st.toggle("HSK 4:    用中文回答")
+toggle = st.toggle("Random question order")
 
 
 # --- question answer columns ---
@@ -41,30 +41,38 @@ columna_respuesta = 2
 filtered_df = df[df['Lesson'] == selected_lesson]
 
 # --- Session state for random index ---
-if "random_index" not in st.session_state or st.session_state.get("last_lesson") != selected_lesson:
-    st.session_state.random_index = random.randint(0, len(filtered_df) - 1) if not filtered_df.empty else None
+if "index" not in st.session_state or st.session_state.get("last_lesson") != selected_lesson:
+    st.session_state.index = 0 if not toggle else random.randint(0, len(filtered_df) - 1)
     st.session_state.last_lesson = selected_lesson
+
 
 # --- Function to pick a new random row ---
 def get_new_random_row():
     if not filtered_df.empty:
-        st.session_state.random_index = random.randint(0, len(filtered_df) - 1)
+        st.session_state.index = random.randint(0, len(filtered_df) - 1)
+
+def get_next_ordered_row():
+    if not filtered_df.empty:
+        st.session_state.index = (st.session_state.index + 1) % len(filtered_df)
 
 # --- Display question ---
-if st.session_state.random_index is not None:
-    random_row = filtered_df.iloc[st.session_state.random_index]
-    st.subheader(random_row.iloc[columna_pregunta])
+if not filtered_df.empty:
+    current_row = filtered_df.iloc[st.session_state.index]
+    st.subheader(current_row.iloc[columna_pregunta])
 
     # Reveal answer
     if st.button('???'):
         if columna_respuesta == 1:
-            st.title(random_row.iloc[columna_respuesta])
+            st.title(current_row.iloc[columna_respuesta])
         else:
-            st.subheader(random_row.iloc[columna_respuesta])
+            st.subheader(current_row.iloc[columna_respuesta])
 
     # Next question
     if st.button("+++"):
-        get_new_random_row()
+        if toggle:
+            get_new_random_row()
+        else:
+            get_next_ordered_row()
         st.rerun()
 else:
     st.warning("No questions available for this lesson.")
