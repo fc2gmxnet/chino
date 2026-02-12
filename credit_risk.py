@@ -20,16 +20,16 @@ st.set_page_config(
 selected_lesson = st.selectbox("Select Chapter", sorted(df['Lesson'].unique()))
 #toggle = st.toggle("HSK 4:    用中文回答")
 
-"""
+
 # --- question answer columns ---
-if toggle:
-    columna_pregunta = 2
-    columna_respuesta = 1
-else:
-    columna_pregunta = 1
-    columna_respuesta = 2
+#if toggle:
+ #   columna_pregunta = 2
+ #   columna_respuesta = 1
+#else:
+#    columna_pregunta = 1
+#    columna_respuesta = 2
 # END --- UI: Dropdown on top, Toggle below ---
-"""
+
 
 # --- Without using UI: Dropdown
 columna_pregunta = 1
