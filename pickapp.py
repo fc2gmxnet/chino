@@ -22,7 +22,8 @@ LINKS = {
     "Truth": "https://get-the-truth.streamlit.app/",  # Elicitation training
     "MP3": "https://mp3-player.streamlit.app/", # MP3 Player
     "Champion": "https://champion-mind.streamlit.app/", # Develop a Champion's mind
-    "Mind": "https://champion-mind.streamlit.app/", # Develop a Champion's mind
+    "S&P": "https://credit-risk-sp.streamlit.app/", # Credit risk analysis
+    "Financials": "https://financial-statements-top.streamlit.app/", # Credit risk analysis
 }
 
 # --- Dropdown selection (sorted alphabetically) ---
