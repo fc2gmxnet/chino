@@ -83,8 +83,6 @@ else:
     st.warning("No questions available for this lesson.")
 
 # 7. Image below buttons
-with center:
-    # https://github.com/fc2gmxnet/chino/blob/main/jobinterview.jpg
-    st.image(current_row.iloc[columna_imagen], 
-             caption="view", 
-             use_column_width=True)
+st.image(current_row.iloc[columna_imagen], 
+         caption="view", 
+         use_column_width=True)
