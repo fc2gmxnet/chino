@@ -52,7 +52,7 @@ if st.button("Open selected link"):
 items = sorted(LINKS.items(), key=lambda x: x[0])
 
 # Decide how many items per row
-max_per_row = 12
+max_per_row = 11
 
 if len(items) > max_per_row:
     # First row
