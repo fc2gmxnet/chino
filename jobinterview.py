@@ -89,6 +89,14 @@ df_dictionary = {'rule': ['Psychology in job interviews',
 
 df = pd.DataFrame(df_dictionary)
 
+columna_leccion = 0
+columna_pregunta = 1
+columna_respuesta = 2
+#columna_imagen = 3 # Not required if there is no image
+
+#df['Lesson'] = df['Lesson'].astype(str)  # Ensure lessons are strings
+df.iloc[:, columna_leccion] = df.iloc[:, columna_leccion].astype(str)
+
 # 2. Page Configuration 
 st.set_page_config(page_title="Job Interview Training", layout="wide")
 st.set_page_config(
@@ -97,60 +105,63 @@ st.set_page_config(
     layout='wide'
 )
 
-# 3. Initialize Session State
-if 'current_index' not in st.session_state:
-    st.session_state.current_index = random.randint(0, len(df) - 1)
-if 'show_ans' not in st.session_state:
-    st.session_state.show_ans = False
+# --- UI: Dropdown on top, Toggle below ---
+selected_lesson = st.selectbox("Select Chapter", sorted(df.iloc[:, columna_leccion].unique()))
+toggle = st.toggle("Random question order")
 
-# 4. Functions for Logic
-def next_question():
-    st.session_state.current_index = random.randint(0, len(df) - 1)
-    st.session_state.show_ans = False
 
-def toggle_answer():
-    st.session_state.show_ans = True
+# --- question answer columns ---
+#if toggle:
+ #   columna_pregunta = 2
+ #   columna_respuesta = 1
+#else:
+#    columna_pregunta = 1
+#    columna_respuesta = 2
+# END --- UI: Dropdown on top, Toggle below ---
 
-# 5. Display UI
-row = df.iloc[st.session_state.current_index]
 
-with st.container(border=True):
-    st.subheader(row['rule'])
-    
-    st.markdown(f"<p style='font-size: 24px;'>❓ {row['question']}</p>", unsafe_allow_html=True)
-    
-if st.session_state.show_ans:
-        # Custom CSS for a large green box
-        st.markdown(
-            f"""
-            <div style="
-                background-color: #d4edda; 
-                color: #155724; 
-                padding: 20px; 
-                border-radius: 10px; 
-                border: 1px solid #c3e6cb;
-                margin-top: 20px;">
-                <span style="font-size: 24px; font-weight: 500;">{row['answer']}</span>
-            </div>
-            """, 
-            unsafe_allow_html=True
-        )
+# --- Filter by selected lesson ---
+filtered_df = df[df.iloc[:, columna_leccion] == selected_lesson]
 
-# 6. Buttons
-# This creates 3 columns: empty space, the buttons, and more empty space
-# The middle column (ratio of 2) holds the buttons
-#left_spacer, center, right_spacer = st.columns([1, 2, 1])
-left_spacer, center, right_spacer = st.columns([2, 2, 2])
+# --- Session state for random index ---
+if "index" not in st.session_state or st.session_state.get("last_lesson") != selected_lesson:
+    st.session_state.index = 0 if not toggle else random.randint(0, len(filtered_df) - 1)
+    st.session_state.last_lesson = selected_lesson
 
-with center:
-    col1, col2 = st.columns(2)
-    with col1:
-        st.button("💡 Answer", on_click=toggle_answer, use_container_width=True)
-    with col2:
-        st.button("➡️ Next", on_click=next_question, use_container_width=True)
+
+# --- Function to pick a new random row ---
+def get_new_random_row():
+    if not filtered_df.empty:
+        st.session_state.index = random.randint(0, len(filtered_df) - 1)
+
+def get_next_ordered_row():
+    if not filtered_df.empty:
+        st.session_state.index = (st.session_state.index + 1) % len(filtered_df)
+
+# --- Display question ---
+if not filtered_df.empty:
+    current_row = filtered_df.iloc[st.session_state.index]
+    st.subheader(current_row.iloc[columna_pregunta])
+
+    # Reveal answer
+    if st.button('???'):
+        if columna_respuesta == 1:
+            st.title(current_row.iloc[columna_respuesta])
+        else:
+            st.subheader(current_row.iloc[columna_respuesta])
+
+    # Next question
+    if st.button("+++"):
+        if toggle:
+            get_new_random_row()
+        else:
+            get_next_ordered_row()
+        st.rerun()
+else:
+    st.warning("No questions available for this lesson.")
 
 # 7. Image below buttons
-with center:
+#with center:
     # https://github.com/fc2gmxnet/chino/blob/main/jobinterview.jpg
     st.image("jobinterview.jpg", 
              caption="Interview", 
