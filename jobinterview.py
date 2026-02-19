@@ -158,14 +158,14 @@ if not filtered_df.empty:
     st.subheader(current_row.iloc[columna_pregunta])
 
     # Reveal answer
-    if st.button('???'):
+    if st.button('?'):
         if columna_respuesta == 1:
             st.title(current_row.iloc[columna_respuesta])
         else:
             st.subheader(current_row.iloc[columna_respuesta])
 
     # Next question
-    if st.button("+++"):
+    if st.button('►'):
         if toggle:
             get_new_random_row()
         else:
