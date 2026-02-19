@@ -12,8 +12,9 @@ df = pd.DataFrame(df_dictionary)
 
 columna_leccion = 0
 columna_keywords = 1
-columna_pregunta = 2
-columna_respuesta = 3
+columna_foco = 2
+columna_pregunta = 3
+columna_respuesta = 4
 #columna_imagen = 3 # Not required if there is no image
 
 df.iloc[:, columna_leccion] = df.iloc[:, columna_leccion].astype(str) # Ensure lessons are strings
@@ -51,6 +52,7 @@ def get_next_ordered_row():
 if not filtered_df.empty:
     current_row = filtered_df.iloc[st.session_state.index]
     st.header(current_row.iloc[columna_keywords])
+    st.subheader(current_row.iloc[columna_foco])
     st.subheader(current_row.iloc[columna_pregunta])
 
     # Reveal answer
