@@ -48,6 +48,20 @@ def get_next_ordered_row():
     if not filtered_df.empty:
         st.session_state.index = (st.session_state.index + 1) % len(filtered_df)
 
+# --- Add CSS to style the buttons
+st.markdown(
+    """
+    <style>
+    div.stButton > button:first-child {
+        width: 350px;
+        #height: 50px;
+        #font-size: 20px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # --- Display question ---
 if not filtered_df.empty:
     current_row = filtered_df.iloc[st.session_state.index]
@@ -59,11 +73,11 @@ if not filtered_df.empty:
     st.subheader(current_row.iloc[columna_pregunta])
 
     # Reveal answer
-    if st.button('???'):
+    if st.button('?'):
        st.subheader(current_row.iloc[columna_respuesta])
 
     # Next question
-    if st.button("+++"):
+    if st.button('►'):
         if toggle:
             get_new_random_row()
         else:
