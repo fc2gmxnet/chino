@@ -51,7 +51,10 @@ def get_next_ordered_row():
 # --- Display question ---
 if not filtered_df.empty:
     current_row = filtered_df.iloc[st.session_state.index]
-    st.header(current_row.iloc[columna_keywords])
+
+    combined_text = f"{current_row.iloc[columna_leccion]}: {current_row.iloc[columna_keywords]}"
+
+    st.header(combined_text)
     st.subheader(current_row.iloc[columna_foco])
     st.subheader(current_row.iloc[columna_pregunta])
 
