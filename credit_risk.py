@@ -64,7 +64,7 @@ st.markdown(
     """
     <style>
     div.stButton > button:first-child {
-        width: 200px;
+        width: 350px;
         #height: 50px;
         #font-size: 20px;
     }
