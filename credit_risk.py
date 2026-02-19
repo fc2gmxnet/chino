@@ -87,7 +87,7 @@ if not filtered_df.empty:
             st.subheader(current_row.iloc[columna_respuesta])
 
     # Next question
-    if st.button('+++'):
+    if st.button('►'):
         if toggle:
             get_new_random_row()
         else:
