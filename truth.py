@@ -1,5 +1,5 @@
-# Managing your boss
-# Book by John Gabarro (Harvard Business Review)
+# Get the truth
+# Book by Philip Houston et al.
 # Minimalistic layout (ideal for mobile phones)
 
 import streamlit as st
@@ -10,75 +10,62 @@ import random
 df_dictionary = {'rule': ['1: Preparation & Influence', '1: Preparation & Influence', '1: Preparation & Influence', '1: Preparation & Influence', '1: Preparation & Influence', '1: Preparation & Influence', '1: Preparation & Influence', '1: Preparation & Influence', '1: Preparation & Influence', '1: Preparation & Influence', '1: Preparation & Influence', '2: Assessment', '2: Assessment', '2: Assessment', '2: Assessment', '2: Assessment', '2: Assessment', '2: Assessment', '2: Assessment', '2: Assessment', '2: Assessment', '2: Assessment', '3: Persuasion', '3: Persuasion', '3: Persuasion', '3: Persuasion', '3: Persuasion', '3: Persuasion', '3: Persuasion', '3: Persuasion', '3: Persuasion', '3: Persuasion', '3: Persuasion', '4: Exchange of Proposals & Options', '4: Exchange of Proposals & Options', '4: Exchange of Proposals & Options', '4: Exchange of Proposals & Options', '4: Exchange of Proposals & Options', '4: Exchange of Proposals & Options', '4: Exchange of Proposals & Options', '4: Exchange of Proposals & Options', '4: Exchange of Proposals & Options', '4: Exchange of Proposals & Options', '4: Exchange of Proposals & Options', '5: Closing & Verification', '5: Closing & Verification', '5: Closing & Verification', '5: Closing & Verification', '5: Closing & Verification', '5: Closing & Verification', '5: Closing & Verification', '5: Closing & Verification', '5: Closing & Verification', '5: Closing & Verification', '5: Closing & Verification'], 'keywords': ['likability, reducing resistance', 'likability, reducing resistance', 'likability, reducing resistance', 'likability, reducing resistance', 'likability, reducing resistance', 'likability, reducing resistance', 'likability, reducing resistance', 'likability, reducing resistance', 'likability, reducing resistance', 'likability, reducing resistance', 'likability, reducing resistance', 'seeking the truth, detection', 'seeking the truth, detection', 'seeking the truth, detection', 'seeking the truth, detection', 'seeking the truth, detection', 'seeking the truth, detection', 'seeking the truth, detection', 'seeking the truth, detection', 'seeking the truth, detection', 'seeking the truth, detection', 'seeking the truth, detection', 'shifting the narrative', 'shifting the narrative', 'shifting the narrative', 'shifting the narrative', 'shifting the narrative', 'shifting the narrative', 'shifting the narrative', 'shifting the narrative', 'shifting the narrative', 'shifting the narrative', 'shifting the narrative', 'trading while eliciting', 'trading while eliciting', 'trading while eliciting', 'trading while eliciting', 'trading while eliciting', 'trading while eliciting', 'trading while eliciting', 'trading while eliciting', 'trading while eliciting', 'trading while eliciting', 'trading while eliciting', 'commitment and truth', 'commitment and truth', 'commitment and truth', 'commitment and truth', 'commitment and truth', 'commitment and truth', 'commitment and truth', 'commitment and truth', 'commitment and truth', 'commitment and truth', 'commitment and truth'], 'focus': ['Building a psychological environment where the truth feels safe', 'Building a psychological environment where the truth feels safe', 'Building a psychological environment where the truth feels safe', 'Building a psychological environment where the truth feels safe', 'Building a psychological environment where the truth feels safe', 'Building a psychological environment where the truth feels safe', 'Building a psychological environment where the truth feels safe', 'Building a psychological environment where the truth feels safe', 'Building a psychological environment where the truth feels safe', 'Building a psychological environment where the truth feels safe', 'Building a psychological environment where the truth feels safe', 'Identifying hidden agendas and veracity through non-confrontational observation', 'Identifying hidden agendas and veracity through non-confrontational observation', 'Identifying hidden agendas and veracity through non-confrontational observation', 'Identifying hidden agendas and veracity through non-confrontational observation', 'Identifying hidden agendas and veracity through non-confrontational observation', 'Identifying hidden agendas and veracity through non-confrontational observation', 'Identifying hidden agendas and veracity through non-confrontational observation', 'Identifying hidden agendas and veracity through non-confrontational observation', 'Identifying hidden agendas and veracity through non-confrontational observation', 'Identifying hidden agendas and veracity through non-confrontational observation', 'Identifying hidden agendas and veracity through non-confrontational observation', 'Using psychological triggers to move the party toward your objective', 'Using psychological triggers to move the party toward your objective', 'Using psychological triggers to move the party toward your objective', 'Using psychological triggers to move the party toward your objective', 'Using psychological triggers to move the party toward your objective', 'Using psychological triggers to move the party toward your objective', 'Using psychological triggers to move the party toward your objective', 'Using psychological triggers to move the party toward your objective', 'Using psychological triggers to move the party toward your objective', 'Using psychological triggers to move the party toward your objective', 'Using psychological triggers to move the party toward your objective', 'Trading value while maintaining the elicitation flow (extraction of information or a response)', 'Trading value while maintaining the elicitation flow (extraction of information or a response)', 'Trading value while maintaining the elicitation flow (extraction of information or a response)', 'Trading value while maintaining the elicitation flow (extraction of information or a response)', 'Trading value while maintaining the elicitation flow (extraction of information or a response)', 'Trading value while maintaining the elicitation flow (extraction of information or a response)', 'Trading value while maintaining the elicitation flow (extraction of information or a response)', 'Trading value while maintaining the elicitation flow (extraction of information or a response)', 'Trading value while maintaining the elicitation flow (extraction of information or a response)', 'Trading value while maintaining the elicitation flow (extraction of information or a response)', 'Trading value while maintaining the elicitation flow (extraction of information or a response)', 'Ensuring commitment and verifying the truth of the deal', 'Ensuring commitment and verifying the truth of the deal', 'Ensuring commitment and verifying the truth of the deal', 'Ensuring commitment and verifying the truth of the deal', 'Ensuring commitment and verifying the truth of the deal', 'Ensuring commitment and verifying the truth of the deal', 'Ensuring commitment and verifying the truth of the deal', 'Ensuring commitment and verifying the truth of the deal', 'Ensuring commitment and verifying the truth of the deal', 'Ensuring commitment and verifying the truth of the deal', 'Ensuring commitment and verifying the truth of the deal'], 'question': ['Likability: What is the "halo effect" in negotiation?', 'Resistance: How do you "short-circuit" a person\'s ego?', 'Resistance: What is "Normalization"?', 'Influence: Why is "Vulnerability" a tool?', 'Preparation: What is the "Elicitation Mindset"?', 'Likability: How does "Mirroring" affect elicitation?', 'Influence: What is a "Presumptive Statement"?', 'Resistance: What is "Negative Social Validation"?', 'Influence: How do you use "The Ben Franklin Effect"?', 'Preparation: What is the "Target’s Ego"?', 'Example: ', 'Truth-Seeking: What is the "Deception Baseline"?', 'Assessment: What are "Clusters"?', 'Detection: What is a "Non-Answer Statement"?', 'Assessment: What is the "Failure to Deny" indicator?', 'Truth-Seeking: What is the "Bait Question"?', 'Detection: How does "Cognitive Load" reveal lies?', 'Assessment: What is "Inclusion of Hand Gestures"?', 'Truth-Seeking: What is "The Provocative Statement"?', 'Detection: What are "Exclusionary Qualifiers"?', 'Assessment: Why focus on the "Timing" of a response?', 'Example: ', 'Persuasion: What is the "Monologue" technique?', 'Persuasion: What is "The Choice of Evils"?', 'Influence: How do you use "Social Proof"?', 'Persuasion: What is "The Reluctant Hero" frame?', 'Influence: What is the "But You Are Free" (BYAF) technique?', 'Persuasion: What is "Reframing"?', 'Influence: How do you use "Scarcity"?', 'Persuasion: What is "The Altruistic Appeal"?', 'Influence: Why use "Contrast Principle"?', 'Persuasion: What is the "Assumptive Close"?', 'Example: ', 'Exchange: What is "The Nibble"?', 'Options: What is "Bracketing"?', 'Exchange: Why is "Silence" a proposal tool?', 'Options: What is "Logrolling"?', 'Exchange: What is "The Bogey"?', 'Options: How do you use "Conditional Proposals"?', 'Exchange: What is "The Salami Technique"?', 'Options: What is "Expanding the Pie"?', 'Exchange: What is "The Flinch"?', 'Options: What is "The Door-in-the-Face"?', 'Example: ', 'Closing: What is "The Exploding Offer"?', 'Verification: How do you "Test the Commitment"?', 'Closing: What is the "Summarization" technique?', 'Verification: What is "The False Close"?', 'Closing: What is "The Walk-Away"?', 'Verification: What is "The Post-Deal Elicitation"?', 'Closing: How do you use "The Take-Away"?', 'Verification: What is "Confirmation Bias" in closing?', 'Closing: What is "The Puppy Dog Close"?', 'Verification: What is "The Final Sanity Check"?', 'Example: '], 'answer': ["The tendency for a negotiator's positive traits to influence how the other party views their information.", 'By attributing the problem to a system or situation rather than the individual’s character.', "The technique of making a sensitive topic seem routine or common to lower the person's guard.", 'Sharing a minor personal mistake or weakness triggers the Law of Reciprocity, prompting them to share.', 'Moving from "me vs. you" to "us vs. the problem" to reduce biological fight-or-flight responses.', 'Subtly mimicking body language and speech patterns builds subconscious trust and rapport.', 'Stating something as a known fact to force the other person to correct or confirm it.', 'Suggesting that "anyone in your position would have done the same" to reduce shame.', 'Ask for a small, easy favor; it makes the person subconsciously believe they like you.', 'The psychological barrier you must protect to ensure the source continues talking freely.', 'Negotiator: "I appreciate you taking the time. Usually, when we get to these renewal windows, things can feel a bit transactional, which I’ve always found counterproductive. Most directors I work with are just trying to balance staying ahead of the tech curve with some pretty intense budget pressures—that\'s a position anyone in this industry would find challenging." (Normalization / Negative Social Validation)\n\nTarget: "Exactly. We have a lot of stakeholders to answer to."', "The person's normal behavioral patterns when they are comfortable and telling the truth.", 'A group of at least two deceptive behaviors (verbal or non-verbal) occurring within seconds of a prompt.', 'Phrases like "That’s a good question" or "I’m glad you asked," used to buy time to fabricate.', 'When a person answers a direct accusation with an explanation rather than a clear denial.', 'A hypothetical question (e.g., "Is there any reason your name would be on that file?") to test reactions.', 'Lying requires more mental effort; asking for the story in reverse order often breaks a lie.', 'Honest people often use illustrators; deceptive people often sit on their hands or touch their face.', 'A statement meant to get a rise out of the target to see how they defend their position.', 'Words like "basically," "mostly," or "for the most part" that suggest the person is hiding details.', 'A delay in a simple question or an instant answer to a complex one can indicate rehearsal.', 'Negotiator: "Of course. And look, I assume that in your effort to be thorough for those stakeholders, you’ve already had a few conversations with [Competitor X] or [Competitor Y] to see how their features stack up against our current integration." (Presumptive Statement)\n\nTarget: (Pauses for 3 seconds, touches their chin, then speaks) "Well, we’re always looking at the market." (Deception Cluster: Timing Delay + Facial Touch + Non-Answer Statement)\n\nNegotiator\'s Internal Note: The delay and the "Non-Answer" confirm they are deep in talks with a competitor.', 'Speaking at length to prevent the person from saying "no," while embedding persuasive hooks.', 'Presenting the desired outcome as the lesser of two unpleasant consequences.', 'Citing how peers or competitors have already agreed to similar terms to trigger compliance.', 'Framing the person’s cooperation as a courageous act that solves a larger problem.', 'Reminding the person they have the final choice, which paradoxically reduces their resistance.', 'Changing the context of a deal from a "cost" to an "investment" or "insurance policy."', 'Highlighting that the current offer or information window is unique and disappearing.', 'Asking for information or terms "for the sake of the team" or a higher cause.', 'Presenting an extreme, unacceptable option first to make the real proposal look reasonable.', 'Acting as if the person has already agreed to the logic, moving straight to details.', 'Negotiator: "It makes sense. In my experience, you’re essentially looking at two paths. You could go with a lower-cost alternative, which looks great on this quarter’s budget but carries the risk of a 6-month migration downtime that your engineering team would have to explain. Or, we can find a way to make this premium tier work so you get the stability your team needs without the internal \'explanation\' meetings." (Choice of Evils / Reframing)\n\nTarget: "The downtime is definitely a concern, but the price gap is huge."', 'Asking for a small additional concession right after the main agreement is reached.', 'Setting the high and low bounds of a negotiation to steer the "middle" toward your goal.', 'After making an offer, silence forces the other party to fill the void, often with a counter-concession.', 'Trading a low-priority item for you that is high-priority for them.', 'Pretending an issue is very important to you, then "giving it up" in exchange for what you actually want.', 'Using "If... then..." statements to ensure you never give without receiving.', 'Breaking a large proposal into tiny, easily digestible "slices" to avoid overwhelming the target.', 'Finding non-monetary value (like timing or reputation) to add to the exchange.', 'Reacting with visible surprise to a proposal to make the other party second-guess their price.', 'Making an intentionally huge request you know will be rejected, then following with your real goal.', 'Negotiator: "I hear that. If I were able to bridge that price gap by 15% through a longer-term commitment, would that be enough for you to recommend staying with us to your board?" (Conditional Proposal)\n\nTarget: "Maybe, but I\'d need that 15% plus the premium support package for free."\n\nNegotiator: "Tell you what, I can’t do the full support package for free, but I can \'slice\' it—we can give you the premium migration support for the first 90 days at no cost to ensure there’s zero risk." (Salami Technique)', 'An offer with a strict time limit to force a decision and prevent "shopping around."', 'Ask for a small, immediate action step (e.g., "Send me that email now") to verify intent.', 'Recapping the agreement to ensure no "misunderstandings" can be used as an exit later.', 'Pretending the meeting is over to see if the person’s demeanor changes or they leak more info.', 'Being genuinely prepared to leave; it is the ultimate form of leverage in a closing.', 'Asking "Just out of curiosity..." after the deal is signed to uncover hidden motives.', 'Removing an option from the table to make the other person realize they actually want it.', 'The danger of only seeing signs that the deal is done while ignoring red flags of cold feet.', 'Letting the target "test drive" the solution so they become emotionally attached to it.', 'Asking yourself: "Does the behavior I saw today match the deal they just signed?"', 'Negotiator: "It sounds like we have a path forward. I’ll draft the addendum with the 15% adjustment and the 90-day support window today so you can have it on your desk by 5:00 PM." (Assumptive Close)\n\nTarget: "Okay, send it over."\n\nNegotiator: (As they are standing up to leave) "By the way, just out of curiosity... what was the one thing [Competitor X] offered that almost made you make the jump?" (Post-Deal Elicitation)\n\nTarget: "Honestly? Their dashboard UI is just much cleaner."\n\nNegotiator\'s Internal Note: Valuable intel for the product team to prevent future resistance.']}
 df = pd.DataFrame(df_dictionary)
 
+columna_leccion = 0
+columna_keywords = 1
+columna_pregunta = 2
+columna_respuesta = 3
+#columna_imagen = 3 # Not required if there is no image
+
+df.iloc[:, columna_leccion] = df.iloc[:, columna_leccion].astype(str) # Ensure lessons are strings
+
 # 2. Page Configuration 
-st.set_page_config(page_title="Getting the Truth Training", layout="wide")
 st.set_page_config(
     page_title='maps - Pesquisa Google',
     page_icon='https://github.com/fc2gmxnet/chino/raw/main/icons8-google-logo-48.png',
     layout='wide'
 )
 
-# 2.5 Rule Selector at the Top
-selected_rule = st.selectbox(
-  "📌 Select a phase for a elicitation meeting",
-  options=df['rule'].unique()
-)  
+# --- UI: Dropdown on top, Toggle below ---
+selected_lesson = st.selectbox("Select Chapter", sorted(df.iloc[:, columna_leccion].unique()))
+toggle = st.toggle("Random question order")
 
-# 3. Initialize Session State
-if 'current_index' not in st.session_state:
-    st.session_state.current_index = 0   # start at the first row
-    #st.session_state.current_index = random.randint(0, len(df) - 1) # start at a random row
-if 'show_ans' not in st.session_state:
-    st.session_state.show_ans = False
+# --- Filter by selected lesson ---
+filtered_df = df[df.iloc[:, columna_leccion] == selected_lesson]
 
-# 4. Functions for Logic
-def next_question():
-    # move to the next row in order
-    st.session_state.current_index += 1
-    if st.session_state.current_index >= len(df):
-        st.session_state.current_index = 0   # loop back to start if at the end
-    #st.session_state.current_index = random.randint(0, len(df) - 1) # Original code, to pick questions randomly
-    st.session_state.show_ans = False
+# --- Session state for random index ---
+if "index" not in st.session_state or st.session_state.get("last_lesson") != selected_lesson:
+    st.session_state.index = 0 if not toggle else random.randint(0, len(filtered_df) - 1)
+    st.session_state.last_lesson = selected_lesson
 
-def toggle_answer():
-    st.session_state.show_ans = True
 
-# 5. Display UI
-row = df.iloc[st.session_state.current_index]
+# --- Function to pick a new random row ---
+def get_new_random_row():
+    if not filtered_df.empty:
+        st.session_state.index = random.randint(0, len(filtered_df) - 1)
 
-with st.container(border=True):
-    st.subheader(f"🪄 Keywords: {row['keywords']}")
-    #st.subheader(f"Focus: {row['focus']}")
-    st.markdown(f"<p style='font-size: 24px;'>🎯 Focus: {row['focus']}</p>", unsafe_allow_html=True)
-    
-    st.markdown(f"<p style='font-size: 24px;'>❓ {row['question']}</p>", unsafe_allow_html=True)
-    
-if st.session_state.show_ans:
-        # Custom CSS for a large green box
-        st.markdown(
-            f"""
-            <div style="
-                background-color: #d4edda; 
-                color: #155724; 
-                padding: 20px; 
-                border-radius: 10px; 
-                border: 1px solid #c3e6cb;
-                margin-top: 20px;">
-                <span style="font-size: 24px; font-weight: 500;">{row['answer']}</span>
-            </div>
-            """, 
-            unsafe_allow_html=True
-        )
+def get_next_ordered_row():
+    if not filtered_df.empty:
+        st.session_state.index = (st.session_state.index + 1) % len(filtered_df)
 
-# 6. Buttons
-# This creates 3 columns: empty space, the buttons, and more empty space
-# The middle column (ratio of 2) holds the buttons
-#left_spacer, center, right_spacer = st.columns([1, 2, 1])
-left_spacer, center, right_spacer = st.columns([2, 2, 2])
+# --- Display question ---
+if not filtered_df.empty:
+    current_row = filtered_df.iloc[st.session_state.index]
+    st.header(current_row.iloc[columna_keywords])
+    st.subheader(current_row.iloc[columna_pregunta])
 
-with center:
-    col1, col2 = st.columns(2)
-    with col1:
-        st.button("💡 Answer", on_click=toggle_answer, use_container_width=True)
-    with col2:
-        st.button("➡️ Next", on_click=next_question, use_container_width=True)
+    # Reveal answer
+    if st.button('???'):
+        if columna_respuesta == 1:
+            st.title(current_row.iloc[columna_respuesta])
+        else:
+            st.subheader(current_row.iloc[columna_respuesta])
+
+    # Next question
+    if st.button("+++"):
+        if toggle:
+            get_new_random_row()
+        else:
+            get_next_ordered_row()
+        st.rerun()
+else:
+    st.warning("No questions available for this lesson.")
