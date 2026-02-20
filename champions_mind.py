@@ -44,9 +44,11 @@ toggle = st.toggle("Random question order")
 filtered_df = df#[df.iloc[:, columna_leccion] == selected_lesson]
 
 # --- Session state for random index ---
-if "index" not in st.session_state or st.session_state.get("last_lesson") != selected_lesson:
-    st.session_state.index = 0 if not toggle else random.randint(0, len(filtered_df) - 1)
-    st.session_state.last_lesson = selected_lesson
+#if "index" not in st.session_state or st.session_state.get("last_lesson") != selected_lesson:
+#    st.session_state.index = 0 if not toggle else random.randint(0, len(filtered_df) - 1)
+#    st.session_state.last_lesson = selected_lesson
+
+st.session_state.index = 0
 
 
 # --- Function to pick a new random row ---
