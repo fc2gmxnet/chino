@@ -100,25 +100,27 @@ else:
 # --- JavaScript for keyboard shortcuts ---
 shortcut = """
 <script>
-document.addEventListener('keydown', function(e) {
-    // Left arrow, Down arrow, or Space triggers the "?" button
-    if (e.key === 'ArrowLeft' || e.key === 'ArrowDown' || e.code === 'Space') {
-        const btns = Array.from(document.querySelectorAll('button'));
-        const targetBtn = btns.find(el => el.innerText.trim() === '?');
-        if (targetBtn) targetBtn.click();
-    }
-
-    // Right arrow triggers the "►" button
-    if (e.key === 'ArrowRight') {
-        const btns = Array.from(document.querySelectorAll('button'));
-        const targetBtn = btns.find(el => el.innerText.trim() === '►');
-        if (targetBtn) targetBtn.click();
-    }
-});
+(function() {
+    document.addEventListener('keydown', function(e) {
+        // Left, Down, or Space triggers '?'
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowDown' || e.code === 'Space') {
+            const btns = Array.from(document.querySelectorAll('button'));
+            const targetBtn = btns.find(el => el.innerText.trim() === '?');
+            if (targetBtn) targetBtn.click();
+        }
+        // Right triggers '►'
+        if (e.key === 'ArrowRight') {
+            const btns = Array.from(document.querySelectorAll('button'));
+            const targetBtn = btns.find(el => el.innerText.trim() === '►');
+            if (targetBtn) targetBtn.click();
+        }
+    });
+})();
 </script>
 """
 
 st.markdown(shortcut, unsafe_allow_html=True)
+
 
 # 7. Image below buttons
 #if columna_imagen in current_row.index and not pd.isna(current_row[columna_imagen]):
