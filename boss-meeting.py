@@ -29,7 +29,7 @@ st.set_page_config(
 # --- UI: Dropdown on top, Toggle below ---
 if columna_leccion is not None and columna_leccion < df.shape[1]:
     df.iloc[:, columna_leccion] = df.iloc[:, columna_leccion].astype(str)
-    selected_lesson = st.selectbox("Select Chapter", sorted(df.iloc[:, columna_leccion].unique()))
+    selected_lesson = st.selectbox("Select phase", sorted(df.iloc[:, columna_leccion].unique()))
     filtered_df = df[df.iloc[:, columna_leccion] == selected_lesson]
 else:
     #st.info("No lesson column found. Showing all data.")
