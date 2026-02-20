@@ -30,7 +30,7 @@ if columna_leccion is not None and columna_leccion < df.shape[1]:
     selected_lesson = st.selectbox("Select Chapter", sorted(df.iloc[:, columna_leccion].unique()))
     filtered_df = df[df.iloc[:, columna_leccion] == selected_lesson]
 else:
-    st.info("No lesson column found. Showing all data.")
+    #st.info("No lesson column found. Showing all data.")
     selected_lesson = None
     filtered_df = df.copy()
 
