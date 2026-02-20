@@ -97,20 +97,12 @@ if not filtered_df.empty:
 else:
     st.warning("No questions available for this lesson.")
 
-# 7. Image below buttons
-#if columna_imagen in current_row.index and not pd.isna(current_row[columna_imagen]):
- #   st.image(
-  #      current_row[columna_imagen],
-   #     caption="view",
-    #    use_column_width=True
-    #)
-
-# JavaScript for keyboard shortcuts
+# --- JavaScript for keyboard shortcuts ---
 shortcut = """
 <script>
 document.addEventListener('keydown', function(e) {
     // Left arrow, Down arrow, or Space triggers the "?" button
-    if (e.key === 'ArrowLeft' || e.key === 'ArrowDown' || e.key === ' ') {
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowDown' || e.code === 'Space') {
         const btns = Array.from(document.querySelectorAll('button'));
         const targetBtn = btns.find(el => el.innerText.trim() === '?');
         if (targetBtn) targetBtn.click();
@@ -126,7 +118,14 @@ document.addEventListener('keydown', function(e) {
 </script>
 """
 
-# Inject script
 st.markdown(shortcut, unsafe_allow_html=True)
+
+# 7. Image below buttons
+#if columna_imagen in current_row.index and not pd.isna(current_row[columna_imagen]):
+ #   st.image(
+  #      current_row[columna_imagen],
+   #     caption="view",
+    #    use_column_width=True
+    #)
 
 
