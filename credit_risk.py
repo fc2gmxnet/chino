@@ -105,13 +105,13 @@ shortcut = """
         window.shortcutBound = true;
         window.addEventListener('keydown', function(e) {
             // Left, Down, or Space triggers '?'
-            if (e.key === 'ArrowLeft' || e.key === 'ArrowDown' || e.code === 'Space') {
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowDown' || e.code === 'Space' || e.key === 'a' ) {
                 const btns = Array.from(document.querySelectorAll('button'));
                 const targetBtn = btns.find(el => el.innerText.trim() === '?');
                 if (targetBtn) targetBtn.click();
             }
             // Right triggers '►'
-            if (e.key === 'ArrowRight') {
+            if (e.key === 'ArrowRight' || e.key === 'q' ) {
                 const btns = Array.from(document.querySelectorAll('button'));
                 const targetBtn = btns.find(el => el.innerText.trim() === '►');
                 if (targetBtn) targetBtn.click();
