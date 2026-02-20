@@ -73,6 +73,31 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# JavaScript for keyboard shortcuts
+shortcut = """
+<script>
+document.addEventListener('keydown', function(e) {
+    // Left arrow, Down arrow, or Space triggers the "?" button
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowDown' || e.key === ' ') {
+        const btns = Array.from(document.querySelectorAll('button'));
+        const targetBtn = btns.find(el => el.innerText.trim() === '?');
+        if (targetBtn) targetBtn.click();
+    }
+
+    // Right arrow triggers the "►" button
+    if (e.key === 'ArrowRight') {
+        const btns = Array.from(document.querySelectorAll('button'));
+        const targetBtn = btns.find(el => el.innerText.trim() === '►');
+        if (targetBtn) targetBtn.click();
+    }
+});
+</script>
+"""
+
+# Inject script
+st.markdown(shortcut, unsafe_allow_html=True)
+
+
 
 # --- Display question ---
 if not filtered_df.empty:
