@@ -82,7 +82,7 @@ if not filtered_df.empty:
 
     # Reveal answer
     if st.button('?'):
-        if columna_respuesta == 1:
+        if columna_respuesta == 0:
             st.title(current_row.iloc[columna_respuesta])
         else:
             st.subheader(current_row.iloc[columna_respuesta])
