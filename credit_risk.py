@@ -73,6 +73,9 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# Initialize state for revealing the answer (NEW)
+if 'show_answer' not in st.session_state:
+    st.session_state.show_answer = False
 
 
 # --- Display question ---
@@ -82,47 +85,52 @@ if not filtered_df.empty:
 
     # Reveal answer
     if st.button('?'):
-        if columna_respuesta == 1:
-            st.subheader(current_row.iloc[columna_respuesta])
-        else:
-            st.subheader(current_row.iloc[columna_respuesta])
+        st.session_state.show_answer = not st.session_state.show_answer
+
+    # Logic to show answer based on state
+    if st.session_state.show_answer:
+        st.subheader(current_row.iloc[columna_respuesta])
 
     # Next question
     if st.button('►'):
+        st.session_state.show_answer = False # Reset for next question
         if toggle:
             get_new_random_row()
         else:
             get_next_ordered_row()
         st.rerun()
+
 else:
     st.warning("No questions available for this lesson.")
 
 # --- JavaScript for keyboard shortcuts ---
+# Using .includes() and filtering by button tag is more reliable
 shortcut = """
 <script>
-(function() {
-    if (!window.shortcutBound) {
-        window.shortcutBound = true;
-        window.addEventListener('keydown', function(e) {
-            // Left, Down, or Space triggers '?'
-            if (e.key === 'ArrowLeft' || e.key === 'ArrowDown' || e.code === 'Space' || e.key === 'a' ) {
-                const btns = Array.from(document.querySelectorAll('button'));
-                const targetBtn = btns.find(el => el.innerText.trim() === '?');
-                if (targetBtn) targetBtn.click();
-            }
-            // Right triggers '►'
-            if (e.key === 'ArrowRight' || e.key === 'q' ) {
-                const btns = Array.from(document.querySelectorAll('button'));
-                const targetBtn = btns.find(el => el.innerText.trim() === '►');
-                if (targetBtn) targetBtn.click();
-            }
-        });
-    }
-})();
+    const doc = window.parent.document;
+    doc.addEventListener('keydown', function(e) {
+        // Prevent spacebar from scrolling the page
+        if (e.code === 'Space') e.preventDefault();
+
+        const btns = Array.from(doc.querySelectorAll('button'));
+        
+        // Target Reveal button
+        if (['ArrowLeft', 'ArrowDown', 'Space', 'a'].includes(e.key) || e.code === 'Space') {
+            const revealBtn = btns.find(el => el.innerText.includes('?'));
+            if (revealBtn) revealBtn.click();
+        }
+        
+        // Target Next button
+        if (['ArrowRight', 'q'].includes(e.key)) {
+            const nextBtn = btns.find(el => el.innerText.includes('►'));
+            if (nextBtn) nextBtn.click();
+        }
+    }, {once: false}); 
 </script>
 """
 
-st.markdown(shortcut, unsafe_allow_html=True)
+# Use components.html for cleaner JS execution or stick to markdown
+st.components.v1.html(shortcut, height=0)
 
 
 
@@ -133,5 +141,3 @@ st.markdown(shortcut, unsafe_allow_html=True)
    #     caption="view",
     #    use_column_width=True
     #)
-
-
