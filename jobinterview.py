@@ -97,8 +97,7 @@ columna_respuesta = 2
 #df['Lesson'] = df['Lesson'].astype(str)  # Ensure lessons are strings
 df.iloc[:, columna_leccion] = df.iloc[:, columna_leccion].astype(str)
 
-# 2. Page Configuration 
-st.set_page_config(page_title="Job Interview Training", layout="wide")
+# --- Page configuration ---
 st.set_page_config(
     page_title='maps - Pesquisa Google',
     page_icon='https://github.com/fc2gmxnet/chino/raw/main/icons8-google-logo-48.png',
@@ -127,6 +126,7 @@ filtered_df = df[df.iloc[:, columna_leccion] == selected_lesson]
 if "index" not in st.session_state or st.session_state.get("last_lesson") != selected_lesson:
     st.session_state.index = 0 if not toggle else random.randint(0, len(filtered_df) - 1)
     st.session_state.last_lesson = selected_lesson
+    st.session_state.show_answer = False
 
 
 # --- Function to pick a new random row ---
@@ -137,6 +137,8 @@ def get_new_random_row():
 def get_next_ordered_row():
     if not filtered_df.empty:
         st.session_state.index = (st.session_state.index + 1) % len(filtered_df)
+
+# --- Add CSS to style the buttons
 
 # Inject CSS to style the button
 st.markdown(
@@ -152,6 +154,11 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# Initialize state for revealing the answer (NEW)
+if 'show_answer' not in st.session_state:
+    st.session_state.show_answer = False
+
+
 # --- Display question ---
 if not filtered_df.empty:
     current_row = filtered_df.iloc[st.session_state.index]
@@ -159,24 +166,59 @@ if not filtered_df.empty:
 
     # Reveal answer
     if st.button('?'):
-        if columna_respuesta == 1:
-            st.title(current_row.iloc[columna_respuesta])
-        else:
-            st.subheader(current_row.iloc[columna_respuesta])
+        st.session_state.show_answer = not st.session_state.show_answer
+
+    # Logic to show answer based on state
+    if st.session_state.show_answer:
+        st.subheader(current_row.iloc[columna_respuesta])
 
     # Next question
     if st.button('►'):
+        st.session_state.show_answer = False # Reset for next question
         if toggle:
             get_new_random_row()
         else:
             get_next_ordered_row()
         st.rerun()
+
 else:
     st.warning("No questions available for this lesson.")
 
+# --- JavaScript for keyboard shortcuts ---
+# Using .includes() and filtering by button tag is more reliable
+shortcut = """
+<script>
+    const doc = window.parent.document;
+    doc.addEventListener('keydown', function(e) {
+        // Prevent spacebar from scrolling the page
+        if (e.code === 'Space') e.preventDefault();
+
+        const btns = Array.from(doc.querySelectorAll('button'));
+        
+        // Target Reveal button
+        if (['ArrowLeft', 'ArrowDown', 'Space', 'a'].includes(e.key) || e.code === 'Space') {
+            const revealBtn = btns.find(el => el.innerText.includes('?'));
+            if (revealBtn) revealBtn.click();
+        }
+        
+        // Target Next button
+        if (['ArrowRight', 'q'].includes(e.key)) {
+            const nextBtn = btns.find(el => el.innerText.includes('►'));
+            if (nextBtn) nextBtn.click();
+        }
+    }, {once: false}); 
+</script>
+"""
+
+# Use components.html for cleaner JS execution or stick to markdown
+st.components.v1.html(shortcut, height=0)
+
+
+
 # 7. Image below buttons
-#with center:
-    # https://github.com/fc2gmxnet/chino/blob/main/jobinterview.jpg
-st.image("jobinterview.jpg", 
-        caption="Interview", 
-        use_column_width=True)
+#if columna_imagen in current_row.index and not pd.isna(current_row[columna_imagen]):
+ #   st.image(
+  #      current_row[columna_imagen],
+   #     caption="view",
+    #    use_column_width=True
+    #)
