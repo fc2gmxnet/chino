@@ -1,3 +1,4 @@
+
 # Get the truth
 # Book by Philip Houston et al.
 # Minimalistic layout (ideal for mobile phones)
@@ -38,7 +39,6 @@ if "index" not in st.session_state or st.session_state.get("last_lesson") != sel
     st.session_state.index = 0 if not toggle else random.randint(0, len(filtered_df) - 1)
     st.session_state.last_lesson = selected_lesson
 
-
 # --- Function to pick a new random row ---
 def get_new_random_row():
     if not filtered_df.empty:
@@ -62,6 +62,10 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# Initialize state for revealing the answer (NEW)
+if 'show_answer' not in st.session_state:
+    st.session_state.show_answer = False
+
 # --- Display question ---
 if not filtered_df.empty:
     current_row = filtered_df.iloc[st.session_state.index]
@@ -70,14 +74,19 @@ if not filtered_df.empty:
 
     st.header(combined_text)
     st.subheader(current_row.iloc[columna_foco])
-    st.subheader(current_row.iloc[columna_pregunta])
+    st.subheader(current_row.iloc[columna_pregunta]) 
 
     # Reveal answer
     if st.button('?'):
-       st.subheader(current_row.iloc[columna_respuesta])
+        st.session_state.show_answer = not st.session_state.show_answer
+
+    # Logic to show answer based on state
+    if st.session_state.show_answer:
+        st.subheader(current_row.iloc[columna_respuesta])
 
     # Next question
     if st.button('►'):
+        st.session_state.show_answer = False # Reset for next question
         if toggle:
             get_new_random_row()
         else:
@@ -85,3 +94,41 @@ if not filtered_df.empty:
         st.rerun()
 else:
     st.warning("No questions available for this lesson.")
+
+# --- JavaScript for keyboard shortcuts ---
+# Using .includes() and filtering by button tag is more reliable
+shortcut = """
+<script>
+    const doc = window.parent.document;
+    doc.addEventListener('keydown', function(e) {
+        // Prevent spacebar from scrolling the page
+        if (e.code === 'Space') e.preventDefault();
+
+        const btns = Array.from(doc.querySelectorAll('button'));
+        
+        // Target Reveal button
+        if (['ArrowLeft', 'ArrowDown', 'Space', 'a'].includes(e.key) || e.code === 'Space') {
+            const revealBtn = btns.find(el => el.innerText.includes('?'));
+            if (revealBtn) revealBtn.click();
+        }
+        
+        // Target Next button
+        if (['ArrowRight', 'q'].includes(e.key)) {
+            const nextBtn = btns.find(el => el.innerText.includes('►'));
+            if (nextBtn) nextBtn.click();
+        }
+    }, {once: false}); 
+</script>
+"""
+
+# Use components.html for cleaner JS execution or stick to markdown
+st.components.v1.html(shortcut, height=0)
+
+
+# 7. Image below buttons
+#if columna_imagen in current_row.index and not pd.isna(current_row[columna_imagen]):
+ #   st.image(
+  #      current_row[columna_imagen],
+   #     caption="view",
+    #    use_column_width=True
+    #)
