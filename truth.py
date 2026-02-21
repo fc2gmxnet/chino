@@ -69,9 +69,7 @@ if 'show_answer' not in st.session_state:
 # --- Display question ---
 if not filtered_df.empty:
     current_row = filtered_df.iloc[st.session_state.index]
-
     combined_text = f"{current_row.iloc[columna_leccion]}: {current_row.iloc[columna_keywords]}"
-
     st.header(combined_text)
     st.subheader(current_row.iloc[columna_foco])
     st.subheader(current_row.iloc[columna_pregunta]) 
@@ -86,7 +84,7 @@ if not filtered_df.empty:
 
     # Next question
     if st.button('►'):
-        st.session_state.show_answer = False # Reset for next question
+        st.session_state.show_answer = False
         if toggle:
             get_new_random_row()
         else:
@@ -121,7 +119,7 @@ shortcut = """
 </script>
 """
 
-# Use components.html for cleaner JS execution or stick to markdown
+### Use components.html for cleaner JS execution or stick to markdown
 st.components.v1.html(shortcut, height=0)
 
 
