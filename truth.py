@@ -38,6 +38,7 @@ filtered_df = df[df.iloc[:, columna_leccion] == selected_lesson]
 if "index" not in st.session_state or st.session_state.get("last_lesson") != selected_lesson:
     st.session_state.index = 0 if not toggle else random.randint(0, len(filtered_df) - 1)
     st.session_state.last_lesson = selected_lesson
+    st.session_state.show_answer = false
 
 # --- Function to pick a new random row ---
 def get_new_random_row():
