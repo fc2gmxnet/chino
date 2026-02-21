@@ -215,4 +215,4 @@ st.components.v1.html(shortcut, height=0)
 
 
 # 7. Image below buttons
-st.image(jobinterview.jpg, caption="view", use_column_width=True)
+st.image("https://github.com/fc2gmxnet/chino/blob/main/jobinterview.jpg", caption="view", use_column_width=True)
