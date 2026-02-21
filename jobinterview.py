@@ -215,9 +215,4 @@ st.components.v1.html(shortcut, height=0)
 
 
 # 7. Image below buttons
-#if columna_imagen in current_row.index and not pd.isna(current_row[columna_imagen]):
- #   st.image(
-  #      current_row[columna_imagen],
-   #     caption="view",
-    #    use_column_width=True
-    #)
+st.image(jobinterview.jpg, caption="view", use_column_width=True)
