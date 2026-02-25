@@ -31,6 +31,7 @@ mp3_files = {
     "DISC C Owl": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/DISC_C_Owl.mp3",
     "Champion Mind": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/Champion_mind.mp3",
     "Sales Training": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/sales_training.mp3",
+    "Verbal defense": "https://raw.githubusercontent.com/fc2gmxnet/chino/main/mp3/autodefesa-verbal.mp3",
     # Add more as needed
 }
 
